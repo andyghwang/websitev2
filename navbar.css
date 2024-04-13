@@ -18,6 +18,10 @@ body {
     color: inherit;
 }
 
+.hide {
+    display: none;
+}
+
 /* ================================== COMPONENTS ================================== */
 header {
     background-color: rgba(243, 243, 243, 0.952);
@@ -32,6 +36,8 @@ header {
 
 header nav {
     height: inherit;
+    display: flex; 
+    align-items: center;
 }
 
 header ul {
@@ -99,6 +105,19 @@ header .navmenu .navitem .dropdown a {
     font-size: 1.5rem;
 }
 
+.logo-wrapper:hover {
+    background-color: grey;
+    color: white;
+    transition-duration: .25s;
+    border-radius: 3px;
+}
+
+.logo-wrapper:hover span {
+    background-color: rgb(201, 201, 201);
+    transition-duration: .25s;
+    color:rgba(6, 190, 160, 0.76);
+}
+
 .logo-wrapper span {
     background-color: rgba(0, 153, 128, 0.76);
     color: white;
@@ -107,5 +126,24 @@ header .navmenu .navitem .dropdown a {
     line-height: 0;
 }
 
+.search-icon {
+    font-size: 20px;
+    padding-right: 5px;
+}
+
+.search-icon:hover {
+    cursor: pointer;
+    color: rgba(163, 163, 163, 0.479); 
+    transition-duration: .25s;
+}
+
+.header-search-form {
+    border-radius: 5px;
+    border-color: red;
+}
+
+.search-input {
+    border: 2px solid red;
+}
 
 /* ================================== PAGES ================================== */

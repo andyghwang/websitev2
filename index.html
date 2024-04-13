@@ -18,12 +18,17 @@
         </a>
         
         <!-- Navbar -->
-        <nav style="display: flex; align-items: center;">
+        <nav>
             <!-- Search -->
             <div class="search-item">
-                <span class="search-icon">
-                    <ion-icon name="search-circle-outline"></ion-icon>
+                <span class="search-icon" role="button">
+                    <ion-icon name="search-outline"></ion-icon>
                 </span>
+                <!-- Search Input -->
+                <form action="index.html" method="post" class="header-search-form hide">
+                    <input type="text" name="search-term" placeholder="Search" 
+                    class="input-control input-control-sm search-input">
+                </form>
             </div>
 
             <ul class="navmenu">
@@ -54,10 +59,26 @@
         </nav>
     </header>
 
-
-
     <!-- Ionic Icon -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Search Toggle -->
+    <script>
+        const searchIcon = document.querySelector('.search-icon');
+        const headerSearchForm = document.querySelector('.header-search-form');
+        const searchInput = document.querySelector('.search-input');
+
+        searchIcon.addEventListener('click', toggleSearchBar)
+        searchInput.addEventListener('blur', toggleSearchBar)
+
+        function toggleSearchBar() {
+            searchIcon.classList.toggle('hide');
+            headerSearchForm.classList.toggle('hide');
+            searchInput.focus();
+        }
+    </script>
+
+
 </body>
 </html>
