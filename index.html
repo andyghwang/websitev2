@@ -10,11 +10,15 @@
 
 </head>
 <body>
-
+    
     <header>
+        
+        <div class="nav-overlay"></div>
+        <!-- Menu Icon **mobile size only**--> 
+        <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
         <!-- Logo -->
         <a href="index.html" class="logo-wrapper td-none"> 
-            <div>A<span>G</span>H</div>
+            <div class="logo">A<span>G</span>H</div>
         </a>
         
         <!-- Navbar -->
@@ -30,12 +34,19 @@
                     class="input-control input-control-sm search-input">
                 </form>
             </div>
-
+            <!-- Nav Menu -->
             <ul class="navmenu">
-                <li class="navitem"><a href="#">Home</a></li>
-                <li class="navitem"><a href="#">Blog</a></li>
-                <li class="navitem"><a href="#">Resume</a></li>
-                <li class="navitem"><a href="#">Projects <ion-icon class="navicon" name="chevron-down-outline"></ion-icon></a>
+                <li class="navitem"><a href="index.html">Home</a></li>
+                <li class="navitem"><a href="blog.html">Blog</a></li>
+                <li class="navitem"><a href="#">Resume 
+                    <ion-icon class="navicon" name="chevron-down-outline"></ion-icon></a>
+                    <ul class="dropdown">
+                        <li><a href="#">View Resume</a></li>
+                        <li><a href="/downloads/andy_hwang_resume.pdf" download>Download Resume</a></li>
+                    </ul>
+                </li>
+                <li class="navitem"><a href="#">Projects 
+                    <ion-icon class="navicon" name="chevron-down-outline"></ion-icon></a>
                     <ul class="dropdown">
                         <li><a href="#">Mini Projects</a></li>
                         <li><a href="#">Large Projects</a></li>
@@ -58,16 +69,23 @@
             </ul>
         </nav>
     </header>
+    
+    
 
     <!-- Ionic Icon -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <!-- Search Toggle -->
+    <!-- Javascript -->
     <script>
+
+        // Search Toggle
         const searchIcon = document.querySelector('.search-icon');
         const headerSearchForm = document.querySelector('.header-search-form');
         const searchInput = document.querySelector('.search-input');
+        const logoWrapper = document.querySelector('.logo-wrapper');
+        const mobileBreakPoint = 768;
+
 
         searchIcon.addEventListener('click', toggleSearchBar)
         searchInput.addEventListener('blur', toggleSearchBar)
@@ -76,7 +94,35 @@
             searchIcon.classList.toggle('hide');
             headerSearchForm.classList.toggle('hide');
             searchInput.focus();
+
+            if (window.innerWidth <= mobileBreakPoint) {
+                logoWrapper.classList.toggle('hide');
+            }
+
         }
+
+        // Navbar Responsiveness
+        const menuIcon = document.querySelector('.menu-icon');
+        const navMenu = document.querySelector('.navmenu');
+        const navOverlay = document.querySelector('.nav-overlay');
+        const dropdowns = document.querySelectorAll('.navitem .dropdown')
+
+        menuIcon.addEventListener('click', function(){
+            navMenu.classList.add('open');
+            navOverlay.classList.add('open');
+        })
+
+        navOverlay.addEventListener('click', function(){
+            navOverlay.classList.remove('open');
+            navMenu.classList.remove('open');
+        })
+
+        dropdowns.forEach(dropdown => {
+            const navItem = dropdown.closest('.navitem');
+            navItem.addEventListener('click', function(){
+                navItem.classList.toggle('active');
+            });
+        })
     </script>
 
 

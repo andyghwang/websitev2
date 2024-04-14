@@ -23,6 +23,9 @@ body {
 }
 
 /* ================================== COMPONENTS ================================== */
+
+/******************************************** HEADER ********************************************/
+
 header {
     background-color: rgba(243, 243, 243, 0.952);
     width: 100%;
@@ -32,6 +35,15 @@ header {
     display: flex;
     justify-content: space-between;    
     align-items: center;
+}
+
+header .nav-overlay {
+    display: none;
+}
+
+header .menu-icon {
+    display: none;
+    font-size: 25px;   
 }
 
 header nav {
@@ -48,6 +60,7 @@ header ul {
 
 header .navmenu {
     display: flex;   
+    transition: all 0.25s ease-in-out;
 }
 
 header .navmenu .navitem {
@@ -102,24 +115,23 @@ header .navmenu .navitem .dropdown a {
 }
 
 .logo-wrapper {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .logo-wrapper:hover {
-    background-color: grey;
-    color: white;
+    color: lightslategrey;
     transition-duration: .25s;
     border-radius: 3px;
 }
 
 .logo-wrapper:hover span {
-    background-color: rgb(201, 201, 201);
+    background-color: lightslategrey;
     transition-duration: .25s;
-    color:rgba(6, 190, 160, 0.76);
+    padding: 0;
 }
 
 .logo-wrapper span {
-    background-color: rgba(0, 153, 128, 0.76);
+    background-color: rgb(89, 146, 137);
     color: white;
     padding: 0 2px;
     border-radius: 3px;
@@ -144,6 +156,106 @@ header .navmenu .navitem .dropdown a {
 
 .search-input {
     border: 2px solid red;
+}
+
+/******************************************** HEADER - Media Queries ********************************************/
+
+@media only screen and (max-width: 1024px) {
+    header {
+        padding: 0 30px; 
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    header .menu-icon {
+        display: block;
+    }
+    
+    header .menu-icon:hover {
+        cursor: pointer;
+        color: rgba(163, 163, 163, 0.479); 
+        transition-duration: .25s;
+    }
+
+    header nav {
+        flex-grow: 1;
+    }
+
+    header .search-item, header .search-item input{
+        width: 100%;
+    }
+
+    header .logo-wrapper {
+        width: 100%;
+        text-align: center;
+    }
+
+    header .nav-overlay.open {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.418);
+    }
+
+    header .navmenu {
+        position: fixed;
+        left: 0;
+        top: 0;
+        flex-direction: column;
+        width: 200px;
+        height: 100%;
+        padding: 70px 5px;
+        background-color:rgba(243, 243, 243, 0.952);
+        overflow-y: scroll;
+        z-index: 10;
+        transform: translateX(-200px);
+    }
+
+    header .navmenu.open {
+        transform: translateX(0);
+        transition: all 0.25s ease-in-out;
+    }
+
+    header .navmenu .navitem {
+        flex-direction: column;
+    }
+
+    header .navmenu .navitem a {
+        padding: 16px;
+    }
+
+    header .navmenu .navitem .dropdown {
+        position: static;
+        width: inherit;
+        background-color: inherit;
+        border-radius: 5px;
+        box-shadow: none;
+        opacity: 1; 
+        max-height: 0px;
+        overflow: hidden;
+        z-index: 1;
+        transform: translateY(0px);
+        transition: max-height 0.25s ease-in-out;
+    }
+
+    header .navmenu .navitem.active .dropdown {
+        max-height: 300px;
+        transition: max-height 0.25s ease-in-out;
+    }
+
+    header .navmenu .navitem .dropdown a {
+        padding-left: 32px;
+    }
+
+    header .logo-wrapper:hover .logo {
+        background-color: none;
+        transition-duration: .25s;
+}
 }
 
 /* ================================== PAGES ================================== */
