@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="admin_styles.css">
+    <link rel="stylesheet" href="../assets/css/admin_styles.css">
     <title>Dashboard</title>
 </head>
 
@@ -48,18 +48,49 @@
                 </d>
 
                 <ul class="list-menu">
-                    <li><a href=""><ion-icon class="menu-icon" name="speedometer-outline"></ion-icon> Dashboard <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon></a></li>
-                    <li><a href=""><ion-icon class="menu-icon" name="reader-outline"></ion-icon> Posts <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon></a></li>
-                    <li><a href=""><ion-icon class="menu-icon" name="grid-outline"></ion-icon> Topics <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon></a></li>
-                    <li><a href=""><ion-icon class="menu-icon" name="people-outline"></ion-icon> Users <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon></a></li>
-                    <li><a href=""><ion-icon class="menu-icon" name="lock-closed-outline"></ion-icon> Roles <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon></a></li>
-                    <li><a href=""><ion-icon class="menu-icon" name="key-outline"></ion-icon> Permissions <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon></a></li>
-                    <li><a href=""><ion-icon class="menu-icon" name="reader-outline"></ion-icon> Collections <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon></a></li>
+                    <li><a href="dashboard.html">
+                        <ion-icon class="menu-icon" name="speedometer-outline"></ion-icon> 
+                            Dashboard 
+                        <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
+                    </a></li>
+                    <li><a href="posts/index.html">
+                        <ion-icon class="menu-icon" name="reader-outline"></ion-icon> 
+                            Posts 
+                        <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
+                    </a></li>
+                    <li><a href="">
+                        <ion-icon class="menu-icon" name="grid-outline"></ion-icon> 
+                            Topics 
+                        <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
+                    </a></li>
+                    <li><a href="">
+                        <ion-icon class="menu-icon" name="people-outline"></ion-icon> 
+                            Users 
+                        <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
+                    </a></li>
+                    <li><a href="">
+                        <ion-icon class="menu-icon" name="lock-closed-outline"></ion-icon> 
+                            Roles 
+                        <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
+                    </a></li>
+                    <li><a href="">
+                        <ion-icon class="menu-icon" name="key-outline"></ion-icon> 
+                            Permissions 
+                        <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
+                    </a></li>
+                    <li><a href="">
+                        <ion-icon class="menu-icon" name="reader-outline"></ion-icon> 
+                            Collections 
+                        <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
+                    </a></li>
                 </ul>
+
             </div>
             <!-- Main Content -->
             <div class="page-content">
-                <h1 class="center">Admin Dashboard</h1>
+                <div class="admin-container">
+                    <h1 class="center">Admin Dashboard</h1>
+                </div>
             </div>
 
 
@@ -67,31 +98,8 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <!-- Javascript -->
-    <script>
-        // Navbar Responsiveness
-        const menuIcon = document.querySelector('.menu-icon');
-        const sidebar = document.querySelector('.sidebar');
-        const navOverlay = document.querySelector('.nav-overlay');
-        const dropdowns = document.querySelectorAll('.navitem .dropdown')
-
-        menuIcon.addEventListener('click', function(){
-            sidebar.classList.add('open');
-            navOverlay.classList.add('open');
-        })
-
-        navOverlay.addEventListener('click', function(){
-            navOverlay.classList.remove('open');
-            sidebar.classList.remove('open');
-        })
-
-        dropdowns.forEach(dropdown => {
-            const navItem = dropdown.closest('.navitem');
-            navItem.addEventListener('click', function(){
-                navItem.classList.toggle('active');
-            });
-        })
-    </script>
+    <!-- Javascript -->  
+    <script src="../assets/js/admin.js"></script>
 
 </body>
 </html>
