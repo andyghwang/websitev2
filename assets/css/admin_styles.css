@@ -18,13 +18,19 @@ hr {
 }
 
 .btn {
+    cursor: pointer;
     transition-duration: .25s;
-    padding: 10px 20px;
-    border-radius: 5px;
 }
 
-.btn:hover {
-    cursor: pointer;
+.btn-box-shadow:active {
+    box-shadow: none;
+    transform: translateY(2px) !important;
+}
+
+.btn-box-shadow {
+    -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.27);
+    -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.27);
+    box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.27);
 }
 
 .center {
@@ -40,6 +46,37 @@ hr {
     margin: 0 3px;
 }
 
+.input-control {
+    display: block;
+    padding: 5px 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 40px;
+    line-height: 1rem;
+    border-radius: 3px;
+    border: 1px solid #00a0835e;
+    font-size: 1.1rem;
+}
+
+textarea.input-control {
+    height: unset !important;
+}
+
+.input-control:focus {
+    outline: 0;
+    border: 1px dashed #0f9b81be;
+}
+
+.input-group {
+    margin-top: 7px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
 .responsive-table {
     overflow-x: auto;
 }
@@ -47,6 +84,11 @@ hr {
 .td-none {
     text-decoration: none;
     color: inherit;
+}
+
+.bg-image {
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 
@@ -85,6 +127,15 @@ hr {
     color: #bc0000;
 }
 
+.admin-form .form-errors {
+    list-style-type: "*";
+    background-color: #f8eaea;
+    border: 1px solid #bc0000;
+    border-radius: 3px;
+    color: #bc0000;
+    padding: 10px 20px;
+}
+
 /* Featured Post Form */
 
 .featured-post-form {
@@ -112,7 +163,9 @@ hr {
 .trash-btn {
     border: 1px solid #f80000;
     background-color: #ff3b3b9f;
-    color: white;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .trash-btn:hover {
@@ -134,7 +187,9 @@ hr {
 .add-post-btn {
     border: 1px solid rgb(84, 143, 134);
     background-color: rgba(84, 143, 134, 0.808);
-    color: white;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .add-post-btn:hover {
@@ -147,7 +202,7 @@ hr {
 
 .admin-table table {
     border: 1px solid #ddd;
-    background-color: white;
+    background-color: #fff;
     border-collapse: collapse;
     width: 100%;
     margin-top: 10px;
@@ -199,12 +254,54 @@ hr {
     font-size: 0.9rem;
     background-color: transparent;
     padding: 0.35rem .75rem;
-    border: 1px solid #ddd;
+    border: 1px dotted #ddd;
 }
 
 .admin-table .pagination-links .link.active {
-    color: white;
+    color: #fff;
     background-color: #0056f76e;
+}
+
+/* Create Post */
+
+.admin-form {
+    background-color: #fff;
+    margin: 20px auto;
+}
+
+.admin-form .post-details {
+    display: flex;
+}
+
+.admin-form .post-details .select-topic-wrapper {
+    flex-basis: 75%;
+}
+
+.admin-form .post-details .image-wrapper {
+    flex-basis: 25%;
+    padding: 26px 20px 20px 30px;
+}
+
+.admin-form .post-details .image-wrapper .img-btn {
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .9rem;
+}
+
+.admin-form .post-details .image-wrapper .img-btn:hover {
+    transform: translateY(-2px);
+    transition-duration: .25s;
+    background-color: #ddd;
+} 
+
+.admin-form .post-details .image-wrapper .img-btn-icon {
+    transform: translateY(1px);
+    margin: 5px;
 }
 
 /******************************************** HEADER ********************************************/
@@ -218,6 +315,9 @@ header {
     display: flex;
     justify-content: space-between;    
     align-items: center;
+    -webkit-box-shadow: 0px 5px 27px -5px rgba(0,0,0,0.52);
+    -moz-box-shadow: 0px 5px 27px -5px rgba(0,0,0,0.52);
+    box-shadow: 0px 5px 27px -5px rgba(0,0,0,0.52);
 }
 
 header .menu-icon {
@@ -315,7 +415,7 @@ header .navmenu .navitem .dropdown a {
 
 .logo-wrapper span {
     background-color: rgb(89, 146, 137);
-    color: white;
+    color: #fff;
     padding: 0 2px;
     border-radius: 3px;
     line-height: 0;
@@ -555,18 +655,18 @@ header .navmenu .navitem .dropdown a {
 }
 
 .sm-box {
-    padding: 32px 10px;
+    padding: 32px 20px;
     max-width: 500px;
     width: 100%;
 }
 
 .md-box {
-    padding: 32px 10px;
+    padding: 32px 30px;
     width: 75%;
 }
 
 .lg-box {
-    padding: 32px 10px;
+    padding: 32px 20px;
     width: 100%;
 }
 

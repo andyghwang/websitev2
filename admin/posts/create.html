@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/admin_styles.css">
-    <title>Create Post</title>
+    <title>Admin - Create Post</title>
 </head>
 
 <body>
@@ -41,7 +41,7 @@
         <!-- Sidebar Menu -->
             <div class="sidebar">               
                 <div class="sidebar-author-mobile">
-                    <img class="avatar" src="../assets/images/avatar/andy_profile_pic.png" alt="">
+                    <img class="avatar" src="../../assets/images/avatar/andy_profile_pic.png" alt="">
                     <h3 class="author-name">Andy Hwang</h3>
                     <a href="" class="logout-link">Logout</a>
                 </div>
@@ -84,84 +84,61 @@
                     </a></li>
                 </ul>
             </div>
+            <!-- ***CREATE POST*** -->
 
             <!-- Main Content -->
             <div class="page-content">
                 <div class="admin-container">
-                    <div class="admin-table lg-box">
+                    <form class="admin-form md-box" action="" method="post" enctype="multipart/form-data">
                         <h1 class="center">Create Post</h1>
-                        <hr>
-
-                        <!-- Flash Message -->
-                        <div class="message success">
-                            <ion-icon class="message-icon" name="checkmark-circle-outline"></ion-icon>
-                            <span>This is a sample message</span>
+                        <!-- Error Message -->
+                        <ul class="form-errors">
+                            <li>Post Title Required</li>
+                            <li>Email Required</li>
+                        </ul>
+                        <!-- Title -->
+                        <div class="input-group">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" id="title" class="input-control">
                         </div>
-
-                        <!-- TABLE -->
-                        <div class="responsive-table">
-                            <table>
-                                <thead>
-                                    <th>SN</th>
-                                    <th>Author</th>
-                                    <th>Title</th>
-                                    <th>Topic</th>
-                                    <th>Views</th>
-                                    <th>Publish</th>
-                                </thead> 
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Andy Hwang</td>
-                                        <td>
-                                            <a href="#">My First Blog Post</a>
-                                            <div class="td-action-links">
-                                                <a href="" class="trash">Delete</a>
-                                                <span class="inline-divider">|</span>
-                                                <a href="" class="edit">Edit</a>
-                                                <span class="inline-divider">|</span>
-                                                <a href="" class="edit">Related Post</a>
-                                            </div>
-                                        </td>
-                                        <td>Tech</td>
-                                        <td>100</td>
-                                        <td><a href="#">Publish</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Alice Kim</td>
-                                        <td>
-                                            <a href="">Mocha and Dobby</a>
-                                            <div class="td-action-links">
-                                                <a href="" class="trash">Delete</a>
-                                                <span class="inline-divider">|</span>
-                                                <a href="" class="edit">Edit</a>
-                                                <span class="inline-divider">|</span>
-                                                <a href="" class="edit">Related Post</a>
-                                            </div>                                
-                                        </td>
-                                        <td>Animals</td>
-                                        <td>250</td>
-                                        <td><a href="">Unpublish</a></td>
-                                    </tr>                                   
-                                </tbody>
-                                <tfoot>
-                                    <td colspan="6" style="border: 1px solid red;">
-                                        <div class="pagination-links">
-                                            <a href="" class="link active">1</a>
-                                            <a href="" class="link">2</a>
-                                            <a href="" class="link">3</a>
-                                            <a href="" class="link">4</a>
-                                            <a href="" class="link">5</a>
-                                            <a href="" class="link">6</a>
-                                            <a href="" class="link">7</a>
-                                        </div>
-                                    </td>
-                                </tfoot>
-                            </table>
+                        <!-- Body -->
+                        <div class="input-group">
+                            <label for="post-editor">Body</label>
+                            <textarea name="body" id="post-editor" class="input-control" rows="15"></textarea>
                         </div>
-
-                    </div>
+                        <!-- Topic -->
+                        <div class="post-details input-group">
+                            <div class="select-topic-wrapper">
+                                <label for="topic">Topic</label>
+                                <select name="topic-id" id="topic" class="input-control">
+                                    <option value=""></option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="Networking">Networking</option>
+                                    <option value="Cybersecurity">Cybersecurity</option>
+                                </select>
+                            </div>
+                            <div class="image-wrapper">
+                                <input type="file" name="image" id="" class="hide image-input">
+                                <button type="button" class="bg-img btn img-btn btn-box-shadow">
+                                    <span>
+                                        <ion-icon class="img-btn-icon" name="image-outline"></ion-icon>
+                                    </span>
+                                    Upload Image
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Published Checkbox -->
+                        <div class="input-group">
+                            <label for="published">
+                                <input type="checkbox" name="published" id="published">
+                                Publish
+                            </label>
+                        </div>
+                        <!-- Submit -->
+                        <div class="input-group">
+                            <button type="submit" class="btn">Create</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
@@ -171,5 +148,30 @@
 
     <!-- Javascript -->  
     <script src="/assets/js/admin.js"></script>
+    <script>
+        const imageInput = document.querySelector('.image-input');
+        const uploadImageBtn = document.querySelector('.img-btn');
+
+        uploadImageBtn.addEventListener('click', function(){
+            imageInput.click();
+        });
+
+        imageInput.addEventListener('change', function(){
+            const file = imageInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    uploadImageBtn.style.backgroundImage = `url(${e.target.result})`;
+                    uploadImageBtn.style.height = '150px';
+                }
+                reader.readAsDataURL(file);
+            }
+
+        });
+
+
+    </script>
+
+    
 </body>
 </html>
