@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/admin_styles.css">
-    <title>Posts</title>
+    <title>Topics</title>
 </head>
 
 <body>
@@ -20,7 +20,6 @@
         
         <!-- Navbar -->
         <nav>
-            <!-- Nav Menu -->
             <ul class="navmenu">
                 <li class="navitem"> 
                     <a href="#">
@@ -52,7 +51,7 @@
                             Dashboard 
                         <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
                     </a></li>
-                    <li><a href="index.html">
+                    <li><a href="../posts/index.html">
                         <ion-icon class="menu-icon" name="reader-outline"></ion-icon> 
                             Posts 
                         <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
@@ -87,69 +86,19 @@
 
             <!-- Main Content -->
             <div class="page-content">
-                <div class="admin-container">
-                    <div class="admin-table lg-box">
-                        <h1 class="center">Posts</h1>
+                <div class="sm-box admin-container">
+                    <div class="admin-table">
+                        <h1 class="center">Topics</h1>
                         <hr>
-
-                        <!-- Flash Message -->
-                        <div class="message success">
-                            <ion-icon class="message-icon" name="checkmark-circle-outline"></ion-icon>
-                            <span>This is a sample message</span>
-                        </div>
-                        
-                        <!-- Featured Post -->
-                        <form action="post" class="featured-post-form">
-                            <strong>Currently Featured Post:</strong>
-                            <span class="title-wrapper">
-                                <span>
-                                    Sample Title
-                                </span>    
-                                <button type="button" class="change-btn">
-                                    Change
-                                </button>
-                            </span>
-                            <span class="input-wrapper hide">
-                                <input 
-                                    type="text"
-                                    name="title"
-                                    class="input-control input-control-sm"
-                                    placeholder="Enter Post Title..."
-                                />
-                                <button type="submit" class="btn-primary">
-                                    Update
-                                </button>
-                            </span>
-                        </form>
-
                         <!-- Table Actions -->
-                        <div class="table-actions">               
-                            <div class="search-selector">
-                                <input 
-                                    type="text" 
-                                    name="search-term"
-                                    id="search-post-input"
-                                    placeholder="Search..."
-                                />
-                                <select name="filter-posts" id="filter-posts">
-                                    <option value="ALL">All</option>
-                                    <option value="OLDEST">Oldest</option>
-                                    <option value="NEWEST">Newest</option>
-                                </select>
-                            </div>     
-                            <div class="thrash-add">
-                                <button type="button" class="btn trash-btn btn-box-shadow">
-                                    <ion-icon name="trash-outline" class="trash-icon"></ion-icon>
-                                    Trash
+                        <div class="table-actions topics">
+                            <span></span>
+                            <a href="./create.html"> 
+                                <button type="button" class="btn add-post-btn btn-box-shadow create-topic-btn">
+                                    <ion-icon name="add-circle-outline" class="add-post-icon"></ion-icon>
+                                    Create Topic
                                 </button>
-                                <a href="./create.html"> 
-                                    <button type="button" class="btn add-post-btn btn-box-shadow">
-                                        <ion-icon name="add-circle-outline" class="add-post-icon"></ion-icon>
-                                        Create Post
-                                    </button>
-                                </a>
-                               
-                            </div>
+                            </a>  
                         </div>
 
                         <!-- TABLE -->
@@ -157,47 +106,34 @@
                             <table>
                                 <thead>
                                     <th>SN</th>
-                                    <th>Author</th>
-                                    <th>Title</th>
                                     <th>Topic</th>
-                                    <th>Views</th>
-                                    <th>Publish</th>
+                                    <th># of Articles</th>
                                 </thead> 
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>Andy Hwang</td>
                                         <td>
-                                            <a href="#">My First Blog Post</a>
+                                            Networking
                                             <div class="td-action-links">
                                                 <a href="" class="trash">Delete</a>
                                                 <span class="inline-divider">|</span>
                                                 <a href="" class="edit">Edit</a>
-                                                <span class="inline-divider">|</span>
-                                                <a href="" class="edit">Related Post</a>
                                             </div>
                                         </td>
-                                        <td>Tech</td>
-                                        <td>100</td>
-                                        <td><a href="#">Publish</a></td>
-                                    </tr>
+                                        <td>3</td>
+                                    </tr>    
                                     <tr>
                                         <td>2</td>
-                                        <td>Alice Kim</td>
                                         <td>
-                                            <a href="">Mocha and Dobby</a>
+                                            Cybersecurity
                                             <div class="td-action-links">
                                                 <a href="" class="trash">Delete</a>
                                                 <span class="inline-divider">|</span>
                                                 <a href="" class="edit">Edit</a>
-                                                <span class="inline-divider">|</span>
-                                                <a href="" class="edit">Related Post</a>
-                                            </div>                                
+                                            </div>
                                         </td>
-                                        <td>Animals</td>
-                                        <td>250</td>
-                                        <td><a href="">Unpublish</a></td>
-                                    </tr>                                   
+                                        <td>5</td>
+                                    </tr>                               
                                 </tbody>
                                 <tfoot>
                                     <td colspan="6">

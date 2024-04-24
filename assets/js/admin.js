@@ -21,3 +21,6 @@ dropdowns.forEach(dropdown => {
         navItem.classList.toggle('active');
     });
 })
+
+
+

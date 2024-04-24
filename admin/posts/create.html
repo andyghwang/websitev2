@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/admin_styles.css">
+    <!-- Quill.js -->
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.0/dist/quill.snow.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../assets/css/admin_styles.css">   
     <title>Admin - Create Post</title>
 </head>
 
@@ -57,7 +59,7 @@
                             Posts 
                         <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
                     </a></li>
-                    <li><a href="">
+                    <li><a href="../topics/index.html">
                         <ion-icon class="menu-icon" name="grid-outline"></ion-icon> 
                             Topics 
                         <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
@@ -99,24 +101,25 @@
                         <!-- Title -->
                         <div class="input-group">
                             <label for="title">Title</label>
-                            <input type="text" name="title" id="title" class="input-control">
+                            <input type="text" name="title" id="title" class="input-control" placeholder="Blog title...">
                         </div>
                         <!-- Body -->
                         <div class="input-group">
-                            <label for="post-editor">Body</label>
-                            <textarea name="body" id="post-editor" class="input-control" rows="15"></textarea>
+                            <label for="editor">Body</label>
+                            <div id="editor" class="editor"></div>
                         </div>
                         <!-- Topic -->
                         <div class="post-details input-group">
                             <div class="select-topic-wrapper">
                                 <label for="topic">Topic</label>
                                 <select name="topic-id" id="topic" class="input-control">
-                                    <option value=""></option>
+                                    <option value="">** Choose Topic **</option>
                                     <option value="Web Development">Web Development</option>
                                     <option value="Networking">Networking</option>
                                     <option value="Cybersecurity">Cybersecurity</option>
                                 </select>
                             </div>
+                            <!-- Upload Image Btn -->
                             <div class="image-wrapper">
                                 <input type="file" name="image" id="" class="hide image-input">
                                 <button type="button" class="bg-img btn img-btn btn-box-shadow">
@@ -124,7 +127,15 @@
                                         <ion-icon class="img-btn-icon" name="image-outline"></ion-icon>
                                     </span>
                                     Upload Image
-                                </button>
+                                </button>       
+                            </div>
+                        </div>
+                        <!-- Preview -->
+                        <div class="preview-wrapper">
+                            <h3 class="preview-heading hide">
+                                Preview
+                            </h3>
+                            <div id="preview-img">
                             </div>
                         </div>
                         <!-- Published Checkbox -->
@@ -136,42 +147,50 @@
                         </div>
                         <!-- Submit -->
                         <div class="input-group">
-                            <button type="submit" class="btn">Create</button>
+                            <button type="submit" class="add-post-btn btn-box-shadow"><b>Create</b></button>
                         </div>
-                    </form>
+                    </form>             
                 </div>
             </div>
 
     <!-- Ionic Icon -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
+    
     <!-- Javascript -->  
     <script src="/assets/js/admin.js"></script>
-    <script>
+    
+    <!-- Uploadd Image Preview -->
+    <script>        
         const imageInput = document.querySelector('.image-input');
         const uploadImageBtn = document.querySelector('.img-btn');
+        const previewImg = document.getElementById('preview-img');
+        const previewHeading = document.querySelector('.preview-heading');
 
         uploadImageBtn.addEventListener('click', function(){
-            imageInput.click();
+            imageInput.click();    
         });
 
         imageInput.addEventListener('change', function(){
-            const file = imageInput.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    uploadImageBtn.style.backgroundImage = `url(${e.target.result})`;
-                    uploadImageBtn.style.height = '150px';
-                }
-                reader.readAsDataURL(file);
+            previewHeading.classList.remove('hide');
+            const fileReader = new FileReader();
+
+            fileReader.readAsDataURL(imageInput.files[0]);
+            fileReader.onload = function (e) {
+
+                previewImg.style.width = '100%';
+                previewImg.style.height = '300px';
+                previewImg.style.backgroundImage = `url(${e.target.result})`;
+                previewImg.style.backgroundSize = '200px';
+                previewImg.style.backgroundRepeat = 'no-repeat';
+                previewImg.style.backgroundPosition = 'center';
             }
-
         });
-
-
     </script>
 
+    <!-- Quill Library -->
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.0/dist/quill.js"></script>
+    <script src="/assets/js/quill.js"></script>
     
 </body>
 </html>

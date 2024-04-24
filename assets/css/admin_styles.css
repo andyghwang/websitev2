@@ -54,27 +54,29 @@ hr {
     height: 40px;
     line-height: 1rem;
     border-radius: 3px;
-    border: 1px solid #00a0835e;
-    font-size: 1.1rem;
+    border: 1px solid #009e815e;
 }
 
-textarea.input-control {
-    height: unset !important;
+.input-control:hover {
+    outline: 0;
+    transition-duration: .5s;
+    border: 1px solid #0f9b81be;
 }
 
 .input-control:focus {
     outline: 0;
-    border: 1px dashed #0f9b81be;
+    transition-duration: .5s;
+    border: 1px dashed #0f9b81e3;
 }
 
 .input-group {
     margin-top: 7px;
+    
 }
 
 .input-group label {
     display: block;
-    margin-bottom: 5px;
-    font-size: 1.1rem;
+    margin-bottom: 10px;
 }
 
 .responsive-table {
@@ -128,7 +130,7 @@ textarea.input-control {
 }
 
 .admin-form .form-errors {
-    list-style-type: "*";
+    list-style-type: "* ";
     background-color: #f8eaea;
     border: 1px solid #bc0000;
     border-radius: 3px;
@@ -153,8 +155,8 @@ textarea.input-control {
 
 /* Table Actions*/
 
-.search-selector-trash-add {
-    padding: 10px 20px;
+.table-actions {
+    padding: 10px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -269,6 +271,11 @@ textarea.input-control {
     margin: 20px auto;
 }
 
+.admin-form .editor {
+    min-height: 200px;
+    border-radius: 5px;
+}
+
 .admin-form .post-details {
     display: flex;
 }
@@ -284,7 +291,7 @@ textarea.input-control {
 
 .admin-form .post-details .image-wrapper .img-btn {
     height: 40px;
-    border: none;
+    border: 1px solid #c4c4c485;
     border-radius: 5px;
     width: 100%;
     display: flex;
@@ -303,6 +310,30 @@ textarea.input-control {
     transform: translateY(1px);
     margin: 5px;
 }
+
+.admin-form .input-group .create-btn {
+    background-color: #00bc98;
+}
+
+/* Preview Image */
+
+.admin-form .preview-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-form .preview-wrapper .preview-heading {
+    margin: 0;
+}
+
+/* Create Topic */
+
+.admin-form textarea {
+    height: unset;
+}
+
+
 
 /******************************************** HEADER ********************************************/
 
@@ -656,13 +687,12 @@ header .navmenu .navitem .dropdown a {
 
 .sm-box {
     padding: 32px 20px;
-    max-width: 500px;
-    width: 100%;
+    width: 60%;
 }
 
 .md-box {
     padding: 32px 30px;
-    width: 75%;
+    width: 80%;
 }
 
 .lg-box {
