@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/admin_styles.css">
-    <title>Topics</title>
+    <title>Roles</title>
 </head>
 
 <body>
@@ -66,7 +66,7 @@
                             Users 
                         <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
                     </a></li>
-                    <li><a href="../roles/index.html">
+                    <li><a href="index.html">
                         <ion-icon class="menu-icon" name="lock-closed-outline"></ion-icon> 
                             Roles 
                         <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
@@ -88,15 +88,15 @@
             <div class="page-content">
                 <div class="sm-box admin-container">
                     <div class="admin-table">
-                        <h1 class="center">Topics</h1>
+                        <h1 class="center">Roles</h1>
                         <hr>
                         <!-- Table Actions -->
                         <div class="table-actions topics">
                             <span></span>
-                            <a href="./create.html"> 
+                            <a href="create.html"> 
                                 <button type="button" class="btn add-post-btn btn-box-shadow create-topic-btn">
                                     <ion-icon name="add-circle-outline" class="add-post-icon"></ion-icon>
-                                    Create Topic
+                                    Create Role
                                 </button>
                             </a>  
                         </div>
@@ -105,34 +105,37 @@
                         <div class="responsive-table">
                             <table>
                                 <thead>
-                                    <th>SN</th>
-                                    <th>Topic</th>
-                                    <th># of Articles</th>
+                                    <th class="center">SN</th>
+                                    <th>Role</th>
+                                    <th class="center"># of Users</th>
+                                    <th class="center">Update Permissions</th>
                                 </thead> 
                                 <tbody>
                                     <tr>
-                                        <td>1</td>
+                                        <td class="center">1</td>
                                         <td>
-                                            Networking
+                                            Author
                                             <div class="td-action-links">
                                                 <a href="" class="trash">Delete</a>
                                                 <span class="inline-divider">|</span>
                                                 <a href="" class="edit">Edit</a>
                                             </div>
                                         </td>
-                                        <td>3</td>
+                                        <td class="center">3</td>
+                                        <td class="center"><a href="">Permissions</a></td>
                                     </tr>    
                                     <tr>
-                                        <td>2</td>
+                                        <td class="center">2</td>
                                         <td>
-                                            Cybersecurity
+                                            Admin
                                             <div class="td-action-links">
                                                 <a href="" class="trash">Delete</a>
                                                 <span class="inline-divider">|</span>
                                                 <a href="" class="edit">Edit</a>
                                             </div>
                                         </td>
-                                        <td>5</td>
+                                        <td class="center">1</td>
+                                        <td class="center"><a href="">Permissions</a></td>
                                     </tr>                               
                                 </tbody>
                             </table>
