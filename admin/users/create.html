@@ -6,7 +6,7 @@
     <!-- Quill.js -->
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.0/dist/quill.snow.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../../assets/css/admin_styles.css">   
-    <title>Admin - Create Post</title>
+    <title>Admin - Create User</title>
 </head>
 
 <body>
@@ -54,7 +54,7 @@
                             Dashboard 
                         <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
                     </a></li>
-                    <li><a href="index.html">
+                    <li><a href="../posts/index.html">
                         <ion-icon class="menu-icon" name="reader-outline"></ion-icon> 
                             Posts 
                         <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
@@ -64,7 +64,7 @@
                             Topics 
                         <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
                     </a></li>
-                    <li><a href="../users/index.html">
+                    <li><a href="index.html">
                         <ion-icon class="menu-icon" name="people-outline"></ion-icon> 
                             Users 
                         <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
@@ -91,60 +91,62 @@
             <!-- Main Content -->
             <div class="page-content">
                 <div class="admin-container">
-                    <form class="admin-form md-box" action="" method="post" enctype="multipart/form-data">
-                        <h1 class="center">Create Post</h1>
-                        <!-- Error Message -->
-                        <ul class="form-errors">
-                            <li>Post Title Required</li>
-                            <li>Email Required</li>
-                        </ul>
-                        <!-- Title -->
+                    <form class="admin-form sm-box" action="" method="post" enctype="multipart/form-data">
+                        <h1 class="center">Create User</h1> 
+                        <ion-icon name="person-circle-outline" class="center"></ion-icon>
+
+                        <!-- Profile Image -->
+                        <div class="input-group center">
+                            <label for="profile-image">Profile Image (optional)</label>
+                        </div>
+                        <!-- Username -->
                         <div class="input-group">
-                            <label for="title">Title</label>
-                            <input type="text" name="title" id="title" class="input-control" placeholder="Blog title...">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" class="input-control">
                         </div>
-                        <!-- Body -->
+
+                        <!-- Email -->
                         <div class="input-group">
-                            <label for="editor">Body</label>
-                            <div id="editor" class="editor"></div>
+                            <label for="email">Email</label>
+                            <input type="email" name="email" class="input-control">
                         </div>
-                        <!-- Topic -->
-                        <div class="post-details input-group">
-                            <div class="select-topic-wrapper">
-                                <label for="topic">Topic</label>
-                                <select name="topic-id" id="topic" class="input-control">
-                                    <option value="">** Choose Topic **</option>
-                                    <option value="Web Development">Web Development</option>
-                                    <option value="Networking">Networking</option>
-                                    <option value="Cybersecurity">Cybersecurity</option>
-                                </select>
-                            </div>
-                            <!-- Upload Image Btn -->
-                            <div class="image-wrapper">
-                                <input type="file" name="image" id="" class="hide image-input">
-                                <button type="button" class="bg-img btn img-btn btn-box-shadow">
-                                    <span>
-                                        <ion-icon class="img-btn-icon" name="image-outline"></ion-icon>
-                                    </span>
-                                    Upload Image
-                                </button>       
-                            </div>
-                        </div>
-                        <!-- Preview -->
-                        <div class="preview-wrapper">
-                            <h3 class="preview-heading hide">
-                                Preview
-                            </h3>
-                            <div id="preview-img">
-                            </div>
-                        </div>
-                        <!-- Published Checkbox -->
+                        <!-- Password -->
                         <div class="input-group">
-                            <label for="published">
-                                <input type="checkbox" name="published" id="published">
-                                Publish
-                            </label>
+                            <label for="password">Password</label>
+                            <input type="password" name="password" class="input-control">
                         </div>
+                        <!-- Password Confirmation -->
+                        <div class="input-group">
+                            <label for="password-confirmation">Password Confirmation</label>
+                            <input type="password" name="password-confirmation" class="input-control">
+                        </div>
+                        <!-- Role -->
+                        <div class="input-group">
+                            <label for="role">Role</label>
+                            <select name="role" id="" class="input-control">
+                                <option value="admin">Admin</option>
+                                <option value="admin">Author</option>
+                                <option value="admin">Editor</option>
+                            </select>
+                        </div>      
+                        <!-- Bio -->
+                        <div class="input-group">
+                            <label for="bio">Bio</label>
+                            <textarea name="bio" rows="10" class="input-control"></textarea>
+                        </div>   
+                        <!-- Socials -->
+                        <div class="input-group">
+                            <label for="facebook">Facebook (optional)</label>
+                            <input type="text" name="facebook" class="input-control">
+                        </div>    
+                        <div class="input-group">
+                            <label for="linkedin">LinkedIn (optional)</label>
+                            <input type="text" name="linkedin" class="input-control">
+                        </div>
+                        <div class="input-group">
+                            <label for="username">Instagram (optional)</label>
+                            <input type="text" name="instagram" class="input-control">
+                        </div>                                                                    
                         <!-- Submit -->
                         <div class="input-group">
                             <button type="submit" class="add-post-btn btn-box-shadow btn"><b>Create</b></button>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/admin_styles.css">
-    <title>Posts</title>
+    <title>Users</title>
 </head>
 
 <body>
@@ -52,7 +52,7 @@
                             Dashboard 
                         <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
                     </a></li>
-                    <li><a href="index.html">
+                    <li><a href="../posts/index.html">
                         <ion-icon class="menu-icon" name="reader-outline"></ion-icon> 
                             Posts 
                         <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
@@ -62,7 +62,7 @@
                             Topics 
                         <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
                     </a></li>
-                    <li><a href="../users/index.html">
+                    <li><a href="index.html">
                         <ion-icon class="menu-icon" name="people-outline"></ion-icon> 
                             Users 
                         <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
@@ -89,7 +89,7 @@
             <div class="page-content">
                 <div class="admin-container">
                     <div class="admin-table lg-box">
-                        <h1 class="center">Posts</h1>
+                        <h1 class="center">Users</h1>
                         <hr>
 
                         <!-- Flash Message -->
@@ -97,30 +97,6 @@
                             <ion-icon class="message-icon" name="checkmark-circle-outline"></ion-icon>
                             <span>This is a sample message</span>
                         </div>
-                        
-                        <!-- Featured Post -->
-                        <form action="post" class="featured-post-form">
-                            <strong>Currently Featured Post:</strong>
-                            <span class="title-wrapper">
-                                <span>
-                                    Sample Title
-                                </span>    
-                                <button type="button" class="change-btn">
-                                    Change
-                                </button>
-                            </span>
-                            <span class="input-wrapper hide">
-                                <input 
-                                    type="text"
-                                    name="title"
-                                    class="input-control input-control-sm"
-                                    placeholder="Enter Post Title..."
-                                />
-                                <button type="submit" class="btn-primary">
-                                    Update
-                                </button>
-                            </span>
-                        </form>
 
                         <!-- Table Actions -->
                         <div class="table-actions">               
@@ -135,21 +111,14 @@
                                     <option value="ALL">All</option>
                                     <option value="OLDEST">Oldest</option>
                                     <option value="NEWEST">Newest</option>
-                                </select>
+                                </select>         
                             </div>     
-                            <div class="thrash-add">
-                                <button type="button" class="btn trash-btn btn-box-shadow">
-                                    <ion-icon name="trash-outline" class="trash-icon"></ion-icon>
-                                    Trash
-                                </button>
-                                <a href="./create.html"> 
-                                    <button type="button" class="btn add-post-btn btn-box-shadow">
+                            <a href="./create.html"> 
+                                <button type="button" class="btn add-post-btn btn-box-shadow">
                                         <ion-icon name="add-circle-outline" class="add-post-icon"></ion-icon>
-                                        Create Post
-                                    </button>
-                                </a>
-                               
-                            </div>
+                                        Create User
+                                </button>
+                            </a>                     
                         </div>
 
                         <!-- TABLE -->
@@ -157,58 +126,43 @@
                             <table>
                                 <thead>
                                     <th>SN</th>
-                                    <th>Author</th>
-                                    <th>Title</th>
-                                    <th>Topic</th>
-                                    <th>Views</th>
-                                    <th>Publish</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
                                 </thead> 
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>Andy Hwang</td>
+                                        <td>ahwang93</td>
                                         <td>
-                                            <a href="#">My First Blog Post</a>
+                                            andy.g.hwang@gmail.com
                                             <div class="td-action-links">
                                                 <a href="" class="trash">Delete</a>
                                                 <span class="inline-divider">|</span>
                                                 <a href="" class="edit">Edit</a>
-                                                <span class="inline-divider">|</span>
-                                                <a href="" class="edit">Related Post</a>
                                             </div>
                                         </td>
-                                        <td>Tech</td>
-                                        <td>100</td>
-                                        <td><a href="#">Publish</a></td>
-                                    </tr>
+                                        <td>Admin</td>
+                                    </tr>     
                                     <tr>
                                         <td>2</td>
-                                        <td>Alice Kim</td>
+                                        <td>sujungee</td>
                                         <td>
-                                            <a href="">Mocha and Dobby</a>
+                                            sujungee91@gmail.com
                                             <div class="td-action-links">
                                                 <a href="" class="trash">Delete</a>
                                                 <span class="inline-divider">|</span>
                                                 <a href="" class="edit">Edit</a>
-                                                <span class="inline-divider">|</span>
-                                                <a href="" class="edit">Related Post</a>
-                                            </div>                                
+                                            </div>
                                         </td>
-                                        <td>Animals</td>
-                                        <td>250</td>
-                                        <td><a href="">Unpublish</a></td>
-                                    </tr>                                   
+                                        <td>Author</td>
+                                    </tr>                             
                                 </tbody>
                                 <tfoot>
                                     <td colspan="6">
                                         <div class="pagination-links">
                                             <a href="" class="link active">1</a>
                                             <a href="" class="link">2</a>
-                                            <a href="" class="link">3</a>
-                                            <a href="" class="link">4</a>
-                                            <a href="" class="link">5</a>
-                                            <a href="" class="link">6</a>
-                                            <a href="" class="link">7</a>
                                         </div>
                                     </td>
                                 </tfoot>
