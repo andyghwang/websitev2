@@ -93,37 +93,39 @@
                 <div class="admin-container">
                     <form class="admin-form sm-box" action="" method="post" enctype="multipart/form-data">
                         <h1 class="center">Create User</h1> 
-                        <ion-icon name="person-circle-outline" class="center"></ion-icon>
 
                         <!-- Profile Image -->
                         <div class="input-group center">
+                            <button type="button" class="btn profile-avatar">
+                                <span class="change-profile-picture">Change</span>
+                            </button>
                             <label for="profile-image">Profile Image (optional)</label>
                         </div>
                         <!-- Username -->
                         <div class="input-group">
                             <label for="username">Username</label>
-                            <input type="text" name="username" class="input-control">
+                            <input type="text" id="username" name="username" class="input-control">
                         </div>
 
                         <!-- Email -->
                         <div class="input-group">
                             <label for="email">Email</label>
-                            <input type="email" name="email" class="input-control">
+                            <input type="email" id="email" name="email" class="input-control">
                         </div>
                         <!-- Password -->
                         <div class="input-group">
                             <label for="password">Password</label>
-                            <input type="password" name="password" class="input-control">
+                            <input type="password" id="password" name="password" class="input-control">
                         </div>
                         <!-- Password Confirmation -->
                         <div class="input-group">
                             <label for="password-confirmation">Password Confirmation</label>
-                            <input type="password" name="password-confirmation" class="input-control">
+                            <input type="password" id="password-confirmation" name="password-confirmation" class="input-control">
                         </div>
                         <!-- Role -->
                         <div class="input-group">
                             <label for="role">Role</label>
-                            <select name="role" id="" class="input-control">
+                            <select name="role" id="role" class="input-control">
                                 <option value="admin">Admin</option>
                                 <option value="admin">Author</option>
                                 <option value="admin">Editor</option>
@@ -132,20 +134,20 @@
                         <!-- Bio -->
                         <div class="input-group">
                             <label for="bio">Bio</label>
-                            <textarea name="bio" rows="10" class="input-control"></textarea>
+                            <textarea name="bio" id="bio" rows="5" class="input-control"></textarea>
                         </div>   
                         <!-- Socials -->
                         <div class="input-group">
                             <label for="facebook">Facebook (optional)</label>
-                            <input type="text" name="facebook" class="input-control">
+                            <input type="text" name="facebook" id="facebook" class="input-control">
                         </div>    
                         <div class="input-group">
                             <label for="linkedin">LinkedIn (optional)</label>
-                            <input type="text" name="linkedin" class="input-control">
+                            <input type="text" name="linkedin" id="linkedin" class="input-control">
                         </div>
                         <div class="input-group">
-                            <label for="username">Instagram (optional)</label>
-                            <input type="text" name="instagram" class="input-control">
+                            <label for="instagram">Instagram (optional)</label>
+                            <input type="text" name="instagram" id="instagram" class="input-control">
                         </div>                                                                    
                         <!-- Submit -->
                         <div class="input-group">

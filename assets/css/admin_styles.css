@@ -1,6 +1,11 @@
 /* ================================== DEFAULTS ================================== */
 * {
     box-sizing: border-box;
+    caret-color: transparent;
+}
+
+input, textarea, #editor {
+    caret-color: black;
 }
 
 html, 
@@ -55,6 +60,7 @@ hr {
     line-height: 1rem;
     border-radius: 3px;
     border: 1px solid #009e815e;
+    transition-duration: .5s;
 }
 
 .input-control:hover {
@@ -67,11 +73,11 @@ hr {
     outline: 0;
     transition-duration: .5s;
     border: 1px dashed #0f9b81e3;
+    background-color: #f1f1f160;
 }
 
 .input-group {
     margin-top: 7px;
-    
 }
 
 .input-group label {
@@ -264,7 +270,7 @@ hr {
     background-color: #0056f76e;
 }
 
-/* Create Post */
+/* Create Form */
 
 .admin-form {
     background-color: #fff;
@@ -274,6 +280,37 @@ hr {
 .admin-form .editor {
     min-height: 200px;
     border-radius: 5px;
+}
+
+.admin-form .profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    border: transparent;
+    background-image: url(../images/avatar/avatar-profile.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 0;
+    margin-bottom: 10px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.admin-form .profile-avatar span {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+.admin-form .profile-avatar:hover span {
+    color: white;
+    background-color: rgb(131, 131, 131);
+    opacity: 1;
+    transition-duration: .2s;
 }
 
 .admin-form .post-details {
@@ -579,6 +616,8 @@ header .navmenu .navitem .dropdown a {
     flex-basis: 100%;
     overflow-x: hidden;
 }
+
+
 
 /* ADMIN MOBILE AND TABLET RESPONSIVENESS */
 
