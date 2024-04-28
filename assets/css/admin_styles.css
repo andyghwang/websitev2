@@ -251,6 +251,21 @@ hr {
     color: #18aaff;
 }
 
+.admin-table .related-tables {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin-table .related-tables .all-posts{
+    width: 100%;
+    padding: 30px;
+}
+
+.admin-table .related-tables .related-posts {
+    width: 100%;
+    padding: 30px;
+}
+
 /* Table Pagination */
 
 .admin-table .pagination-links {
@@ -370,6 +385,39 @@ hr {
     height: unset;
 }
 
+/* Related Posts */
+
+.related-tables .all-posts tbody tr:hover {
+    background-color: #0075602d;
+}
+
+.related-tables .related-posts tbody tr:hover{
+    background-color: #0075602d;
+}
+
+.related-tables .related-posts tbody tr:hover .close-icon{
+    display: block;
+}
+
+.check-icon {
+    font-size: 20px;
+    color: green;
+}
+
+.close-icon {
+    font-size: 20px;
+    color: rgb(255, 48, 48);
+    cursor: pointer;
+}
+
+/* Author's Permissions */
+
+.admin-table .role-description {
+    background-color: #f5f5f5;
+    padding: 2px 15px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
 
 
 /******************************************** HEADER ********************************************/

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/admin_styles.css">
-    <title>Admin - Trash</title>
+    <title>Admin - Related Posts</title>
 </head>
 
 <body>
@@ -89,63 +89,72 @@
             <div class="page-content">
                 <div class="admin-container">
                     <div class="admin-table lg-box">
-                        <h1 class="center">Trash</h1>
-                        <hr>
+                        <div class="related-tables">
+                           
+                            <!-- ALL POSTS TABLE -->
+                            <div class="responsive-table all-posts">
+                                <h1 class="center">All Posts</h1>
+                                <div class="search-selector center">
+                                    <label for="search-post-input">Search Posts:</label>
+                                    <input 
+                                        type="text" 
+                                        name="search-term"
+                                        id="search-post-input"
+                                        placeholder="Search..."
+                                    />
+                                </div>                         
+                                <table>
+                                    <thead>
+                                        <th>SN</th>
+                                        <th colspan="2">Title</th>
+                                    </thead> 
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Creating a personal website with HTML, CSS, and Javascript</td>
+                                            <td><ion-icon name="checkmark-outline" class="check-icon"></ion-icon></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Using Tailwind CSS to style webbsite</td>
+                                            <td><ion-icon name="checkmark-outline" class="check-icon"></ion-icon></td>
+                                        </tr>                                   
+                                    </tbody>
+                                </table>
+                            </div>
 
-                        <!-- Table Actions -->
-                        <div class="table-actions"> 
-                            <div></div>
-                            <a href="index.html"> 
-                                <button type="button" class="btn add-post-btn btn-box-shadow">
-                                    <ion-icon name="settings-outline"></ion-icon>
-                                    Manage Post
-                                </button>
-                            </a>
+                            <!-- RELATED POSTS TABLE -->
+                            <div class="responsive-table related-posts">
+                                <h1 class="center">Related Posts</h1>
+                                <p class="center">⭐Tip: Drag andd drop to order items</p>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="center" colspan="3">
+                                                <a href="">This is the title of the related post</a>
+                                            </th>
+                                        </tr>                                       
+                                        <tr>
+                                            <th>SN</th>
+                                            <th colspan="2">Title</th>
+                                        </tr>                               
+                                    </thead> 
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Learning git and github for version control</td>
+                                            <td><ion-icon name="close-outline" class="close-icon hide"></ion-icon></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>CCNA certification studies</td>
+                                            <td><ion-icon name="close-outline" class="close-icon hide"></ion-icon></td>
+                                        </tr><td colspan="3" style="padding-left: 30px; padding-right: 30px;"><button style="width: 100%;" class="btn btn-box-shadow add-post-btn">Save Related Posts</button></td>                           
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-
-                        <!-- TABLE -->
-                        <div class="responsive-table">
-                            <table>
-                                <thead>
-                                    <th>SN</th>
-                                    <th>Author</th>
-                                    <th>Title</th>
-                                    <th>Topic</th>
-                                    <th>Views</th>
-                                </thead> 
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Andy Hwang</td>
-                                        <td>
-                                            <a href="#">My First Blog Post</a>
-                                            <div class="td-action-links">
-                                                <a href="" class="edit">Restore</a>
-                                                <span class="inline-divider">|</span>
-                                                <a href="confirm_delete.html" class="trash">Delete</a>
-                                            </div>
-                                        </td>
-                                        <td>Tech</td>
-                                        <td>100</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Alice Kim</td>
-                                        <td>
-                                            <a href="">Mocha and Dobby</a>
-                                            <div class="td-action-links">
-                                                <a href="" class="edit">Restore</a>
-                                                <span class="inline-divider">|</span>
-                                                <a href="confirm_delete.html" class="trash">Delete</a>
-                                            </div>                               
-                                        </td>
-                                        <td>Animals</td>
-                                        <td>250</td>
-                                    </tr>                                   
-                                </tbody>
-                            </table>
-                        </div>
-                        
+                                              
                     </div>
                 </div>
             </div>
