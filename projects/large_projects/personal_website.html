@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/admin_styles.css">
-    <link rel="stylesheet" href="/assets/css/public.css">
-
-    <!-- Quill.js -->
-    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.0/dist/quill.snow.css" rel="stylesheet" />
-    <title>Test</title>
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="">
+    
+    <link rel="stylesheet" href="../../assets/css/admin_styles.css">
+    <link rel="stylesheet" href="../../assets/css/public.css">
+    <title>Personal Website</title>
 </head>
-
-    <header>     
+<body>
+    
+    <header>
+        
         <div class="nav-overlay"></div>
         <!-- Menu Icon **mobile size only**--> 
         <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
@@ -68,24 +70,50 @@
             </ul>
         </nav>
     </header>
-<body>      
     
-
-    <div id="editor">
-      <p>Hello World!</p>
-      <p>Some initial <strong>bold</strong> text</p>
-      <p><br /></p>
+    <div class="center">
+        <h1>Personal Website</h1>
     </div>
-    
-    <!-- Include the Quill library -->
-    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.0/dist/quill.js"></script>
-    
-    <!-- Initialize Quill editor -->
-<script>
-  const quill = new Quill('#editor', {
-    theme: 'snow'
-  });
-</script>
+    <div>
+        <h2>Useful Sources</h2>
+        <ul>
+            <li><a href="https://ionic.io/ionicons">Ionic Icon</a>: used for various icons throughout the site.</li>
+            <li><a href="https://kenwheeler.github.io/slick/">Slick Carousel</a>: used to display blog contents as a slide in public page.</li>
+            <li><a href="https://github.com/andyghwang/websitev2">Github Repository</a>: main source of version control.</li>
+            <li><a href="https://cdnjs.com/libraries/">CDN Library</a>: easily search for JS libraries.</li>
+            <li><a href="https://www.youtube.com/playlist?list=PL3pyLl-dgiqBgX5zekifMqwNKUdP_G_js">Blog Tutorial</a>: main source for website creation.</li>
+            <li><a href="https://www.cssmatic.com/box-shadow">Box Shadow Generator</a></li>
+            <li><a href="https://quilljs.com/">QuilJS for Text Editor</a>: used in "Create Post" page.</li>
+        </ul>
+    </div>
+
+    <!-- Javascript -->
+    <script>
+
+        // Navbar Responsiveness
+        const menuIcon = document.querySelector('.menu-icon');
+        const navMenu = document.querySelector('.navmenu');
+        const navOverlay = document.querySelector('.nav-overlay');
+        const dropdowns = document.querySelectorAll('.navitem .dropdown')
+
+        menuIcon.addEventListener('click', function(){
+            navMenu.classList.add('open');
+            navOverlay.classList.add('open');
+        })
+
+        navOverlay.addEventListener('click', function(){
+            navOverlay.classList.remove('open');
+            navMenu.classList.remove('open');
+        })
+
+        dropdowns.forEach(dropdown => {
+            const navItem = dropdown.closest('.navitem');
+            navItem.addEventListener('click', function(){
+                navItem.classList.toggle('active');
+            });
+        })
+    </script>
+
 
 </body>
 </html>

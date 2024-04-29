@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+
+    <link rel="stylesheet" href="assets/css/admin_styles.css">
+    <link rel="stylesheet" href="assets/css/public.css">
+    
     <title>Home</title>
 
 
@@ -16,7 +21,7 @@
         <!-- Menu Icon **mobile size only**--> 
         <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
         <!-- Logo -->
-        <a href="index.html" class="logo-wrapper td-none"> 
+        <a href="/index.html" class="logo-wrapper td-none"> 
             <div class="logo">A<span>G</span>H</div>
         </a>
         
@@ -28,15 +33,15 @@
                     <ion-icon name="search-outline"></ion-icon>
                 </span>
                 <!-- Search Input -->
-                <form action="index.html" method="post" class="header-search-form hide">
+                <form action="/index.html" method="post" class="header-search-form hide">
                     <input type="text" name="search-term" placeholder="Search" 
                     class="input-control input-control-sm search-input">
                 </form>
             </div>
             <!-- Nav Menu -->
             <ul class="navmenu">
-                <li class="navitem"><a href="index.html">Home</a></li>
-                <li class="navitem"><a href="test.html">Test</a></li>
+                <li class="navitem"><a href="/index.html">Home</a></li>
+                <li class="navitem"><a href="/test.html">Test</a></li>
                 <li class="navitem"><a href="#">Resume 
                     <ion-icon class="navicon" name="chevron-down-outline"></ion-icon></a>
                     <ul class="dropdown">
@@ -48,10 +53,10 @@
                     <ion-icon class="navicon" name="chevron-down-outline"></ion-icon></a>
                     <ul class="dropdown">
                         <li><a href="#">Mini Projects</a></li>
-                        <li><a href="#">Large Projects</a></li>
+                        <li><a href="/projects/large_projects/personal_website.html">Large Projects</a></li>
                     </ul>
                 </li>
-                <li class="navitem"><a href="#">Contact</a></li>
+                <li class="navitem"><a href="/contact.html">Contact</a></li>
                 <li class="navitem"><a href="/admin/dashboard.html">Login</a></li>
                 <!-- <li class="navitem"> 
                     <a href="#">
@@ -69,7 +74,240 @@
         </nav>
     </header>
     
-    
+    <!-- Page Container -->
+    <div class="page-container">
+        
+        <article class="post-card landscape featured-post">
+            <div class="image-wrapper bg-image" 
+                style="background-image: url(/assets/images/featured_images/cybersecurity.jpg);">
+            </div>
+            <div class="post-info">
+                <div class="topic-wrapper">
+                    <a href="" class="topic-tag td-none">Cybersecurity</a>
+                    <span class="gray-1">5 min</span>
+                </div>
+                <div class="post-title">
+                    <a href="" class="td-none">
+                        <h3>Learning Tailwind CSS</h3>
+                    </a>
+                </div>
+                <div class="post-preview">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                        doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                        doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                        illo aliquam fugit! Vero, asperiores voluptatem.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                        doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                        illo aliquam fugit! Vero, asperiores voluptatem.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                        doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                        illo aliquam fugit! Vero, asperiores voluptatem.
+                        illo aliquam fugit! Vero, asperiores voluptatem.
+                    </p>
+                </div>
+                <div class="author-info">
+                    <div class="author">
+                        <img src="assets/images/avatar/andy_profile_pic.png" class="avatar" alt="">
+                        <a href="" class="link">Andy Hwang</a>
+                    </div>
+                    <a href="" class="link">Read More <ion-icon name="arrow-forward-outline" class="ionic-icon"></ion-icon></a>
+                </div>
+            </div>    
+        </article>
+
+        <!-- Carousel Begin -->
+
+        <section class="page-section carousel-container">
+            
+            <div class="carousel-header">
+                <h2>Best of 2024</h2>
+                <a href="" class="link">See All</a>
+            </div>
+
+            <button class="next-arrow slider-arrow">
+                <ion-icon name="chevron-back-circle-outline"></ion-icon>  
+            </button>
+            <button class="prev-arrow slider-arrow">
+                <ion-icon class="icon" name="chevron-forward-circle-outline"></ion-icon> 
+            </button>
+        
+            
+            
+            <div class="post-slider">
+                <article class="post-card featured-post">
+                    <div class="image-wrapper bg-image" 
+                        style="background-image: url(/assets/images/featured_images/cybersecurity.jpg);">
+                    </div>
+                    <div class="post-info">
+                        <div class="topic-wrapper">
+                            <a href="" class="topic-tag td-none">Cybersecurity</a>
+                            <span class="gray-1">5 min</span>
+                        </div>
+                        <div class="post-title">
+                            <a href="" class="td-none">
+                                <h3>Cybersecurity and CompTIA Security+ Certification</h3>
+                            </a>
+                        </div>
+                        <div class="post-preview">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                                doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                                doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                                illo aliquam fugit! Vero, asperiores voluptatem.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                                doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                                illo aliquam fugit! Vero, asperiores voluptatem.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                                doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                                illo aliquam fugit! Vero, asperiores voluptatem.
+                                illo aliquam fugit! Vero, asperiores voluptatem.
+                            </p>
+                        </div>
+                        <div class="author-info">
+                            <div class="author">
+                                <img src="assets/images/avatar/andy_profile_pic.png" class="avatar" alt="">
+                                <a href="" class="link">Andy Hwang</a>
+                            </div>
+                            <a href="" class="link">Read More <ion-icon name="arrow-forward-outline" class="ionic-icon"></ion-icon></a>
+                        </div>
+                    </div>    
+                </article>
+
+                <article class="post-card featured-post">
+                    <div class="image-wrapper bg-image" 
+                        style="background-image: url(/assets/images/featured_images/networking.jpg);">
+                    </div>
+                    <div class="post-info">
+                        <div class="topic-wrapper">
+                            <a href="" class="topic-tag td-none">Networking</a>
+                            <span class="gray-1">5 min</span>
+                        </div>
+                        <div class="post-title">
+                            <a href="" class="td-none">
+                                <h3>Studying for the CCNA Certification Using PacketTracer</h3>
+                            </a>
+                        </div>
+                        <div class="post-preview">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                                doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                                doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                                illo aliquam fugit! Vero, asperiores voluptatem.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                                doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                                illo aliquam fugit! Vero, asperiores voluptatem.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                                doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                                illo aliquam fugit! Vero, asperiores voluptatem.
+                                illo aliquam fugit! Vero, asperiores voluptatem.
+                            </p>
+                        </div>
+                        <div class="author-info">
+                            <div class="author">
+                                <img src="assets/images/avatar/andy_profile_pic.png" class="avatar" alt="">
+                                <a href="" class="link">Andy Hwang</a>
+                            </div>
+                            <a href="" class="link">Read More <ion-icon name="arrow-forward-outline" class="ionic-icon"></ion-icon></a>
+                        </div>
+                    </div>    
+                </article>
+
+                <article class="post-card featured-post">
+                    <div class="image-wrapper bg-image" 
+                        style="background-image: url(/assets/images/featured_images/web_dev.jpg);">
+                    </div>
+                    <div class="post-info">
+                        <div class="topic-wrapper">
+                            <a href="" class="topic-tag td-none">Web Development</a>
+                            <span class="gray-1">5 min</span>
+                        </div>
+                        <div class="post-title">
+                            <a href="" class="td-none">
+                                <h3>Learning Tailwind CSS</h3>
+                            </a>
+                        </div>
+                        <div class="post-preview">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                                doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                                doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                                illo aliquam fugit! Vero, asperiores voluptatem.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                                doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                                illo aliquam fugit! Vero, asperiores voluptatem.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                                doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                                illo aliquam fugit! Vero, asperiores voluptatem.
+                                illo aliquam fugit! Vero, asperiores voluptatem.
+                            </p>
+                        </div>
+                        <div class="author-info">
+                            <div class="author">
+                                <img src="assets/images/avatar/andy_profile_pic.png" class="avatar" alt="">
+                                <a href="" class="link">Andy Hwang</a>
+                            </div>
+                            <a href="" class="link">Read More <ion-icon name="arrow-forward-outline" class="ionic-icon"></ion-icon></a>
+                        </div>
+                    </div>    
+                </article>
+
+                <article class="post-card featured-post">
+                    <div class="image-wrapper bg-image" 
+                        style="background-image: url(/assets/images/featured_images/sys_admin.jpg);">
+                    </div>
+                    <div class="post-info">
+                        <div class="topic-wrapper">
+                            <a href="" class="topic-tag td-none">Systems Administration</a>
+                            <span class="gray-1">5 min</span>
+                        </div>
+                        <div class="post-title">
+                            <a href="" class="td-none">
+                                <h3>Managing Active Directory, Domain Controllers, Organizational Units, and Users</h3>
+                            </a>
+                        </div>
+                        <div class="post-preview">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                                doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                                doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                                illo aliquam fugit! Vero, asperiores voluptatem.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                                doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                                illo aliquam fugit! Vero, asperiores voluptatem.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tenetur temporibus 
+                                doloribus modi esse, odio non ipsa suscipit qui quia accusamus laborum voluptas cupiditate 
+                                illo aliquam fugit! Vero, asperiores voluptatem.
+                                illo aliquam fugit! Vero, asperiores voluptatem.
+                            </p>
+                        </div>
+                        <div class="author-info">
+                            <div class="author">
+                                <img src="assets/images/avatar/andy_profile_pic.png" class="avatar" alt="">
+                                <a href="" class="link">Andy Hwang</a>
+                            </div>
+                            <a href="" class="link">Read More <ion-icon name="arrow-forward-outline" class="ionic-icon"></ion-icon></a>
+                        </div>
+                    </div>    
+                </article>
+            </div>
+
+        </section>
+
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="page-footer">
+
+    </footer>
+
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Slick Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Ionic Icon -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -122,8 +360,34 @@
                 navItem.classList.toggle('active');
             });
         })
+
+        // Slick Autoplay
+        $('.post-slider').slick({
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          autoplay: false,
+          autoplaySpeed: 2000,
+          infinite: false,
+          nextArrow: $('.carousel-container .prev-arrow'),
+          prevArrow: $('.carousel-container .next-arrow'),
+          responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 550,
+                settings: {
+                slidesToShow: 1,
+                }
+            }
+        ]
+        });
+        
+        
+
     </script>
-
-
 </body>
 </html>

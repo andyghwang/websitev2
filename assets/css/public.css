@@ -1,0 +1,191 @@
+/* ============================== DEFAULTS ==============================  */
+
+.gray-1 {
+    color: slategray;
+}
+
+.post-title {
+    color: rgb(0, 145, 108);
+}
+
+.post-title:hover {
+    color: rgb(0, 167, 125);
+    text-decoration: underline;
+    transition-duration: .25;
+}
+
+
+/* ============================== COMPONENTS ==============================  */
+
+/* Post Card */
+
+.post-card { 
+    height: 480px;
+    width: 352px;
+    overflow: hidden;
+}
+
+.post-card .image-wrapper {
+    height: 38%;
+}
+
+.post-card .post-info {
+    height: 62%;
+    padding: 15px;
+    border: 1px rgba(156, 156, 156, 0.342) solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.post-card .post-info .topic-wrapper
+{
+    display: flex;
+    justify-content:space-between;
+}
+
+.post-card .post-info .topic-wrapper .topic-tag {
+    text-transform: uppercase;
+    font-size: .8rem;
+    padding: 3px 9px;
+    color: rgb(89, 146, 137);
+    background-color: rgba(121, 204, 192, 0.26);
+    border: 1px solid rgb(89, 146, 137);
+    border-radius: 20px;
+}
+
+.post-card .post-info .post-preview {
+    line-height: 1.5rem;
+    max-height: 140px;
+    overflow: overlay;
+}
+
+.post-card .post-info .author-info {
+    display: flex;
+    justify-content:space-between;
+    margin-top: 23px;
+}
+
+.post-card .post-info .author-info .author {
+    display: flex;
+    align-items: center;
+}
+
+.post-card .author-info .avatar {
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+.page-container .collection {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Landscape Card */
+
+.post-card.landscape {
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    width: 100%;
+    margin: 32px auto;
+}
+
+.post-card.landscape.featured-post {
+    width: 70%px;
+}
+
+.post-card.landscape .image-wrapper {
+    flex-basis: 50%;
+    height: 100%;
+}
+
+.post-card.landscape .post-info {
+    flex-basis: 50%;
+    height: 100%;
+    padding: 25px;
+}
+
+@media only screen and (max-width: 800px) {
+    .post-card.landscape {
+        flex-direction: column;
+        height: 480px;
+    }
+
+    .post-card.landscape .post-info {
+        padding: 15px;
+        flex-basis: 70%;
+    }
+}
+
+/* Carousel */
+.carousel-container {
+    position: relative;
+}
+
+.carousel-container .slider-arrow {
+    color: rgba(148, 148, 148, 0.589);
+    position: absolute;
+    bottom: 0;
+    min-height: 480px;
+    font-size: 2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.carousel-container .slider-arrow.prev-arrow {
+    right: -40px;
+}
+
+.carousel-container .slider-arrow.next-arrow {
+    left: -40px;
+}
+
+.carousel-container .slick-arrow.slick-disabled {
+    display: none !important;
+}
+
+.carousel-container .carousel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carousel-container .carousel-header h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.slick-slide {
+    margin: 0 27px; 
+}
+
+.slick-slider {
+    margin: 0 -27px;
+}
+
+
+
+
+
+
+
+/* ============================== PAGES ==============================  */
+
+/* Landing Home Page */
+
+.page-container {
+    max-width: 1200px;
+    min-height: calc(100vh - 580px);
+    margin: 0 auto;
+    padding: 20px 40px;
+}
+
+.page-footer {
+    height: 500px;
+    background-color: rgb(89, 146, 137);
+}
