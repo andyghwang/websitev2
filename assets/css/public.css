@@ -304,11 +304,36 @@
 }
 
 .page-container .main-content {
-    width: 75%;
+    width: 65%;
 }
 
 .page-container .sidebar {
-    width: 20%;
+    width: 30%;
+}
+
+.page-container .sidebar .sidebar-section {
+    margin-top: 1.8rem;
+}
+
+.page-container .sidebar-section.topics-section {
+    background-color: #cfcfcf3a;
+    padding: 2rem;
+    border-radius: 10px;
+} 
+
+.page-container .sidebar-section.topics-section .topic-list a {
+    text-decoration: none;
+    display: inline-block; 
+    border-radius: 15px;
+    color: #fff;
+    color: rgb(89, 146, 137);
+    background-color: rgba(121, 204, 192, 0.26);
+    border: 1px solid rgb(89, 146, 137);
+    padding: 5px 12px;
+    margin: 5px;
+}
+.page-container .sidebar-section.topics-section .topic-list a:hover {
+    background-color: rgba(145, 247, 231, 0.26);
 }
 
 .page-footer {
@@ -340,47 +365,47 @@
     margin: 0 auto;
 }
 
-.page-banner .banner-container .left-box {
+.page-banner .left-box {
     flex-basis: 55%;
     display: flex;
     flex-direction: column;
     padding: 30px 60px;
 }
 
-.page-banner .banner-container .left-box .single-post-title {
+.page-banner .left-box .single-post-title {
     color: rgb(56, 145, 115);
     font-size: 2.5rem;
     margin-top: 5px;
 }
 
-.page-banner .banner-container .left-box .post-detail {
+.page-banner .left-box .post-detail {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 25px;
 }
 
-.page-banner .banner-container .left-box .post-detail .author-wrapper {
+.page-banner .left-box .post-detail .author-wrapper {
     display: flex;
 }
 
-.page-banner .banner-container .left-box .post-detail .name-wrapper {
+.page-banner .left-box .post-detail .name-wrapper {
     display: flex;
     flex-direction: column;
 }
 
-.page-banner .banner-container .left-box .post-detail .author-wrapper .name-wrapper a {
+.page-banner .left-box .post-detail .author-wrapper .name-wrapper a {
     text-decoration: none;
     color: unset;
 }
 
-.page-banner .banner-container .left-box .post-detail img {
+.page-banner .left-box .post-detail img {
     width: 35px;
     border-radius: 50%;
     margin-right: 5px;
 }
 
-.page-banner .banner-container .left-box .post-detail .social-links {
+.page-banner .left-box .post-detail .social-links {
     transform: translateX(-20px);
 }
 
@@ -395,7 +420,7 @@
     color: rgb(140, 156, 172);
 }
 
-.page-banner .banner-container .right-box {
+.page-banner .right-box {
     flex-basis: 45%;
 }
 
