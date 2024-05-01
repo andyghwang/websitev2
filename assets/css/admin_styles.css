@@ -490,7 +490,7 @@ header .navmenu .navitem .navicon {
 header .navmenu .navitem a {
     display: block;
     text-decoration: none;
-    color: black;
+    color: slategray;
     padding: 30px 16px;
 }
 
@@ -531,16 +531,17 @@ header .navmenu .navitem .dropdown a {
 
 .logo-wrapper {
     font-size: 1.8rem;
+    color: slategray;
 }
 
 .logo-wrapper:hover {
-    color: lightslategrey;
+    color: #ddd;
     transition-duration: .25s;
     border-radius: 3px;
 }
 
 .logo-wrapper:hover span {
-    background-color: lightslategrey;
+    background-color: #ddd;
     transition-duration: .25s;
     padding: 0;
 }

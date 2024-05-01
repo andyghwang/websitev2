@@ -14,6 +14,11 @@
     transition-duration: .25;
 }
 
+.primary-font {
+    font-size: 1.2rem;
+    font-family: "Libre Baskerville", serif;
+    line-height: 1.5rem;
+}
 
 /* ============================== COMPONENTS ==============================  */
 
@@ -79,7 +84,7 @@
     border-radius: 50%;
 }
 
-.page-container .collection {
+.default-page-container .collection {
     display: flex;
     justify-content: space-between;
 }
@@ -140,6 +145,11 @@
 
 .carousel-container .slider-arrow.prev-arrow {
     right: -40px;
+}
+
+.carousel-container .slider-arrow.prev-arrow:hover, .slider-arrow.next-arrow:hover {
+    color: #ddd;
+    transition-duration: .25s;
 }
 
 .carousel-container .slider-arrow.next-arrow {
@@ -281,13 +291,24 @@
 }
 /* ============================== PAGES ==============================  */
 
-/* Landing Home Page */
-
-.page-container {
+.default-page-container {
     max-width: 1200px;
     min-height: calc(100vh - 580px);
     margin: 0 auto;
-    padding: 20px 40px;
+    padding: 20px 60px;
+}
+
+.page-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-container .main-content {
+    width: 75%;
+}
+
+.page-container .sidebar {
+    width: 20%;
 }
 
 .page-footer {
@@ -343,7 +364,7 @@
     display: flex;
 }
 
-.page-banner .banner-container .left-box .post-detail .author-wrapper .name-wrapper {
+.page-banner .banner-container .left-box .post-detail .name-wrapper {
     display: flex;
     flex-direction: column;
 }
@@ -359,18 +380,23 @@
     margin-right: 5px;
 }
 
-.page-banner .banner-container .left-box .post-detail .social-icon {
-    font-size: 1.5rem;
-    color: slategray;
+.page-banner .banner-container .left-box .post-detail .social-links {
+    transform: translateX(-20px);
 }
 
-.page-banner .banner-container .left-box .post-detail .social-icon:hover {
+.social-icon {
+    font-size: 1.8rem;
+    color: slategray;
+    transform: translateY(7px);
+    margin: 0 2px;
+}
+
+.social-icon:hover {
     color: rgb(140, 156, 172);
 }
 
 .page-banner .banner-container .right-box {
     flex-basis: 45%;
-    padding: 20px;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -388,3 +414,48 @@
         width: 100%;
     }
 }
+
+/* Author Bio */
+
+.single-page .author-bio {
+    border: 1px solid #d8d8d8;
+    display: flex;
+    margin-top: 30px;
+    padding: 20px 0 0 15px;
+}
+
+.single-page .author-bio .primary-font {
+    font-size: unset;
+}
+
+.single-page .author-bio .avatar-wrapper img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.single-page .author-bio .bio-wrapper {
+    padding: 0px 10px 15px;
+}
+
+.single-page .author-bio .bio-wrapper .author-name {
+    font-size: 1.5rem;
+}
+
+
+.single-page .author-bio .bio-wrapper .social-links {
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+.single-page .author-bio .bio-wrapper .social-links p {
+    margin: 0;
+    color: slategray;
+}
+
+/* Suggested Posts */
+
+.single-page .suggested-posts {
+    margin-top: 30px;
+}
+
+
