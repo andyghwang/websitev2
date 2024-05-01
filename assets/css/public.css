@@ -15,7 +15,7 @@
 }
 
 .primary-font {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-family: "Libre Baskerville", serif;
     line-height: 1.5rem;
 }
@@ -342,7 +342,6 @@
     color: #ddd;
     text-align: center;
     padding: 25px;
-    font-size: 1.2rem;
     -webkit-box-shadow: 0px -19px 35px 6px rgba(0,0,0,0.33);
     -moz-box-shadow: 0px -19px 35px 6px rgba(0,0,0,0.33);
     box-shadow: 0px -19px 35px 6px rgba(0,0,0,0.33);
@@ -350,6 +349,20 @@
 
 .page-section {
     margin-bottom: 64px;
+}
+
+@media only screen and (max-width: 1150px) {
+    .page-container {
+        flex-direction: column;
+    }
+    .page-container .main-content, .page-container .sidebar {
+        width: 100%;
+    }
+
+    .single-page .suggested-posts {
+    margin-top: 30px;
+    margin: 0 35px;
+}
 }
 
 /* Single Post Page */
