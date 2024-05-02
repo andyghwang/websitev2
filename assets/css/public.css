@@ -317,7 +317,8 @@
 
 .page-container .sidebar-section.topics-section {
     background-color: #cfcfcf3a;
-    padding: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
     border-radius: 10px;
 } 
 
@@ -427,10 +428,12 @@
     color: slategray;
     transform: translateY(7px);
     margin: 0 2px;
+    transition-duration: .25s;
 }
 
 .social-icon:hover {
-    color: rgb(140, 156, 172);
+    color: rgb(187, 198, 207);
+    transition-duration: .25s;
 }
 
 .page-banner .right-box {
@@ -496,4 +499,39 @@
     margin-top: 30px;
 }
 
+/* User Posts */
 
+.user-banner-container {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 850px;
+    padding: 0 40px;
+}
+
+.user-banner-container .image-wrapper {
+    padding-top: 30px;
+}
+
+.user-banner-container .image-wrapper img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.user-banner-container .author-name h1 {
+    margin: unset;
+    margin-top: 10px;
+    font-size: 2rem;
+}
+
+.user-banner-container .author-info {
+    font-size: 1.1rem;
+    padding: 10px 0;
+}
+
+.user-banner-container .social-links {
+    padding: 10px 0 30px;
+}
+
+.user-banner-container .social-links a {
+
+}
