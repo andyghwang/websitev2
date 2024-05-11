@@ -1,3 +1,4 @@
+ <?php include("path.php"); ?>
  <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,65 +19,7 @@
 </head>
 <body>
     
-    <header>
-        
-        <div class="nav-overlay"></div>
-        <!-- Menu Icon **mobile size only**--> 
-        <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
-        <!-- Logo -->
-        <a href="/index.html" class="logo-wrapper td-none"> 
-            <div class="logo">A<span>G</span>H</div>
-        </a>
-        
-        <!-- Navbar -->
-        <nav>
-            <!-- Search -->
-            <div class="search-item">
-                <span class="search-icon" role="button">
-                    <ion-icon name="search-outline"></ion-icon>
-                </span>
-                <!-- Search Input -->
-                <form action="/index.html" method="post" class="header-search-form hide">
-                    <input type="text" name="search-term" placeholder="Search" 
-                    class="input-control input-control-sm search-input">
-                </form>
-            </div>
-            <!-- Nav Menu -->
-            <ul class="navmenu">
-                <li class="navitem"><a href="/index.html">Home</a></li>
-                <li class="navitem"><a href="/test.html">Test</a></li>
-                <li class="navitem"><a href="#">Resume 
-                    <ion-icon class="navicon" name="chevron-down-outline"></ion-icon></a>
-                    <ul class="dropdown">
-                        <li><a href="#">View Resume</a></li>
-                        <li><a href="/downloads/andy_hwang_resume.pdf" download>Download Resume</a></li>
-                    </ul>
-                </li>
-                <li class="navitem"><a href="#">Projects 
-                    <ion-icon class="navicon" name="chevron-down-outline"></ion-icon></a>
-                    <ul class="dropdown">
-                        <li><a href="#">Mini Projects</a></li>
-                        <li><a href="/projects/large_projects/personal_website.html">Large Projects</a></li>
-                    </ul>
-                </li>
-                <li class="navitem"><a href="/contact.html">Contact</a></li>
-                <li class="navitem"><a href="/admin/dashboard.html">Login</a></li>
-                <!-- <li class="navitem"> 
-                    <a href="#">
-                        <ion-icon class="navicon" name="person-circle-outline"></ion-icon>
-                        Andy Hwang 
-                        <ion-icon class="navicon" name="chevron-down-outline"></ion-icon>
-                    </a>
-                    <ul class="dropdown">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Logout</a></li>
-                    </ul>
-                </li> -->
-
-            </ul>
-        </nav>
-    </header>
-    
+    <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
     <!-- Page Banner -->
     <section class="page-banner">
@@ -141,7 +84,7 @@
             <!-- Author Bio -->
             <div class="author-bio">
                 <div class="avatar-wrapper">
-                    <img src="/assets/images/avatar/andy_profile_pic.png" alt="">
+                    <img src="assets/images/avatar/andy_profile_pic.png" alt="">
                 </div>
                 <div class="bio-wrapper">
                     <a href="" class="link"><span class="author-name">Andy Hwang</span></a>
@@ -175,7 +118,7 @@
                         <!-- Slide 1 -->
                         <article class="post-card featured-post">
                             <div class="image-wrapper bg-image" 
-                                style="background-image: url(/assets/images/featured_images/cybersecurity.jpg);">
+                                style="background-image: url(assets/images/featured_images/cybersecurity.jpg);">
                             </div>
                             <div class="post-info">
                                 <div class="topic-wrapper">
@@ -206,7 +149,7 @@
                         <!-- Slide 2 -->
                         <article class="post-card featured-post">
                             <div class="image-wrapper bg-image" 
-                                style="background-image: url(/assets/images/featured_images/networking.jpg);">
+                                style="background-image: url(assets/images/featured_images/networking.jpg);">
                             </div>
                             <div class="post-info">
                                 <div class="topic-wrapper">
@@ -237,7 +180,7 @@
                         <!-- Slide 3 -->
                         <article class="post-card featured-post">
                             <div class="image-wrapper bg-image" 
-                                style="background-image: url(/assets/images/featured_images/web_dev.jpg);">
+                                style="background-image: url(assets/images/featured_images/web_dev.jpg);">
                             </div>
                             <div class="post-info">
                                 <div class="topic-wrapper">
@@ -268,7 +211,7 @@
                         <!-- Slide 4 -->
                         <article class="post-card featured-post">
                             <div class="image-wrapper bg-image" 
-                                style="background-image: url(/assets/images/featured_images/sys_admin.jpg);">
+                                style="background-image: url(assets/images/featured_images/sys_admin.jpg);">
                             </div>
                             <div class="post-info">
                                 <div class="topic-wrapper">
@@ -330,35 +273,7 @@
 
 
     <!-- Footer -->
-    <footer class="page-footer">
-
-        <div class="socials">
-            <a href="https://www.facebook.com/hgc93/"><ion-icon name="logo-facebook"></ion-icon></a>
-            <a href="https://www.instagram.com/hgc_93/"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a href="https://www.linkedin.com/in/andy-hwang-b12321199/"><ion-icon name="logo-linkedin"></ion-icon></a>
-            <a href="https://github.com/andyghwang/websitev2"><ion-icon name="logo-github"></ion-icon></a>
-        </div>
-        <hr class="footer-divider">
-        <div class="helpful-links">
-            <a href="">Home</a>
-            <a href="">Resume</a>
-            <a href="">Projects</a>
-            <a href="">Contact</a>
-            <a href="">Login</a>
-        </div>
-        <hr class="footer-divider">
-        <hr>
-        <div class="copyright">
-           ©2024 Copyright AGH.
-        </div>
-        <div class="policy">
-            <a href="">Privacy Policy</a>
-            <span class="break">|</span>
-            <a href="">Website Accessibility</a>
-            <span class="break">|</span>
-            <a href="">Terms and Conditions</a>
-        </div>
-    </footer>
+    <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

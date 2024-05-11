@@ -27,6 +27,18 @@
 
 /* ============================== COMPONENTS ==============================  */
 
+/* Flash Message */
+.success {
+    color: rgb(0, 116, 29);
+    background-color: rgba(131, 207, 115, 0.363);
+    border: rgb(0, 173, 0) solid 1px;
+    height: 2rem;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    padding-top: 5px;
+    text-align: center;
+}
+
 /* Post Card */
 
 .post-card { 
@@ -94,6 +106,7 @@
     justify-content: space-between;
 }
 
+
 /* Landscape Card */
 
 .post-card.landscape {
@@ -106,6 +119,7 @@
 
 .post-card.landscape.featured-post {
     width: 70%px;
+    margin-top: 0;
 }
 
 .post-card.landscape .image-wrapper {
@@ -562,6 +576,15 @@
     margin-top: 10px;
 }
 
+.create-user-page .create-user-form .error-message {
+    background-color: rgba(255, 90, 90, 0.096);
+    border: red solid 1px;
+    color: rgb(226, 0, 0);
+    border-radius: 3px;
+    padding: 5px 10px;
+    
+}
+
 .login-page .password-wrapper {
     display: flex;
     justify-content: space-between;
@@ -574,3 +597,4 @@
 .login-page .remember-me label {
     margin: auto 0 auto 3px;
 }
+
