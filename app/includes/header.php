@@ -56,7 +56,7 @@
                             <li><a href="<?php echo BASE_URL . "/admin/dashboard.php"?>">Dashboard</a></li>
                         <?php endif;?>     
                         <!-- End Session -->
-                        <li><a href="#" style="color: red;">Logout</a></li>
+                        <li><a href="<?php echo BASE_URL . '/logout.php' ?>" style="color: red;">Logout</a></li>
                     </ul>
                 </li>
                 
