@@ -1,3 +1,6 @@
+<?php include('../path.php');?>
+<?php include(ROOT_PATH . '/app/database/db.php');?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,99 +10,24 @@
     <title>Admin - Dashboard</title>
 </head>
 
-<body>
-    
-    <header>
+<body> 
+    <!-- Header | Sidebar -->
+    <?php include(ROOT_PATH . '/app/includes/admin_header_sidebar.php'); ?>
         
-        <div class="nav-overlay"></div>
-        <!-- Menu Icon **mobile size only**--> 
-        <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
-        <!-- Logo -->
-        <a href="/index.html" class="logo-wrapper td-none"> 
-            <div class="logo">A<span>G</span>H</div>
-        </a>
-        
-        <!-- Navbar -->
-        <nav>
-            <!-- Nav Menu -->
-            <ul class="navmenu">
-                <li class="navitem"> 
-                    <a href="#">
-                        <ion-icon class="navicon" name="person-circle-outline"></ion-icon>
-                        Andy Hwang 
-                        <ion-icon class="navicon" name="chevron-down-outline"></ion-icon>
-                    </a>
-                    <ul class="dropdown">
-                        <li><a href="#">Logout</a></li>
-                    </ul>
-                </li>
-
-            </ul>
-        </nav>
-    </header>
+        <!-- Main Content -->
+        <div class="page-content">
+            <div class="admin-container">
+                <h1 class="center">Admin Dashboard</h1>
+            </div>
+        </div>
+    </div>
     
-    <div class="page-wrapper">
-        <!-- Sidebar Menu -->
-            <div class="sidebar">
-                <d class="sidebar-author-mobile">
-                    <img class="avatar" src="../assets/images/avatar/andy_profile_pic.png" alt="">
-                    <h3 class="author-name">Andy Hwang</h3>
-                    <a href="" class="logout-link">Logout</a>
-                </d>
-
-                <ul class="list-menu">
-                    <li><a href="dashboard.html">
-                        <ion-icon class="menu-icon" name="speedometer-outline"></ion-icon> 
-                            Dashboard 
-                        <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
-                    </a></li>
-                    <li><a href="posts/index.html">
-                        <ion-icon class="menu-icon" name="reader-outline"></ion-icon> 
-                            Posts 
-                        <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
-                    </a></li>
-                    <li><a href="topics/index.html">
-                        <ion-icon class="menu-icon" name="grid-outline"></ion-icon> 
-                            Topics 
-                        <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
-                    </a></li>
-                    <li><a href="users/index.html">
-                        <ion-icon class="menu-icon" name="people-outline"></ion-icon> 
-                            Users 
-                        <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
-                    </a></li>
-                    <li><a href="roles/index.html">
-                        <ion-icon class="menu-icon" name="lock-closed-outline"></ion-icon> 
-                            Roles 
-                        <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
-                    </a></li>
-                    <li><a href="permissions/index.html">
-                        <ion-icon class="menu-icon" name="key-outline"></ion-icon> 
-                            Permissions 
-                        <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
-                    </a></li>
-                    <li><a href="collections/index.html">
-                        <ion-icon class="menu-icon" name="reader-outline"></ion-icon> 
-                            Collections 
-                        <ion-icon class="chevron-forward" name="chevron-forward-outline"></ion-icon>
-                    </a></li>
-                </ul>
-
-            </div>
-            <!-- Main Content -->
-            <div class="page-content">
-                <div class="admin-container">
-                    <h1 class="center">Admin Dashboard</h1>
-                </div>
-            </div>
-
-
     <!-- Ionic Icon -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <!-- Javascript -->  
-    <script src="../assets/js/admin.js"></script>
+    <script src="<?php echo BASE_URL . '/assets/js/admin.js'?>"></script>
 
 </body>
 </html>
