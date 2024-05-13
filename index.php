@@ -1,6 +1,7 @@
 <?php 
 include('path.php'); 
 include(ROOT_PATH . '/app/database/db.php');
+include(ROOT_PATH . '/app/controllers/topics.php');
 ?>
 
 <!DOCTYPE html>
@@ -10,6 +11,7 @@ include(ROOT_PATH . '/app/database/db.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Slick Carousel -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <!-- Styles -->
     <link rel="stylesheet" href="assets/css/admin_styles.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="assets/css/public.css?v=<?php echo time(); ?>">
     
@@ -434,21 +436,10 @@ include(ROOT_PATH . '/app/database/db.php');
             <h1>Explore articles in various topics</h1>
             
             <div class="topics-pills">
-                <a href="">Cybersecurity</a>
-                <a href="">Cybersecurity</a>
-                <a href="">Cybersecurity</a>
-                <a href="">Networking</a>
-                <a href="">Networking</a>
-                <a href="">Networking</a>
-                <a href="">Networking</a>
-                <a href="">Networking</a>
-                <a href="">Networking</a>
-                <a href="">Networking</a>
-                <a href="">Networking</a>
-                <a href="">Cybersecurity</a>
-                <a href="">Cybersecurity</a>
-                <a href="">Cybersecurity</a>
-                <a href="">Cybersecurity</a>
+                <?php foreach ($topics as $key => $topic): ?>
+                    <a href=""><?php echo $topic['name']; ?></a>                                                                                                                              
+                <?php endforeach; ?>
+                
             </div>     
         </section>
 

@@ -43,21 +43,25 @@
                                 <thead>
                                     <th>SN</th>
                                     <th>Topic</th>
-                                    <th># of Articles</th>
+                                    <th>Description</th>
                                 </thead> 
                                 <tbody>
+                                    <?php foreach ($topics as $key => $topic) : ?>
                                     <tr>
-                                        <td>1</td>
+                                        <td><?php echo $key + 1;?></td>
                                         <td>
-                                            Networking
+                                            <?php echo $topic['name']; ?>
                                             <div class="td-action-links">
-                                                <a href="" class="trash">Delete</a>
+                                                <a href="index.php?del_id=<?php echo $topic['id']; ?>" class="trash">Delete</a>
                                                 <span class="inline-divider">|</span>
-                                                <a href="" class="edit">Edit</a>
+                                                <a href="edit.php?id=<?php echo $topic['id']; ?>" class="edit">Edit</a>
                                             </div>
                                         </td>
-                                        <td>3</td>
-                                    </tr>                                                          
+                                        <td>
+                                            <?php echo $topic['description']; ?>
+                                        </td>                                                                                                                    
+                                    </tr>
+                                    <?php endforeach; ?>                                                          
                                 </tbody>
                             </table>
                         </div>
