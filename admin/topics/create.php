@@ -1,12 +1,15 @@
 <?php include('../../path.php');?>
 <?php include(ROOT_PATH . '/app/database/db.php');?>
+<?php include(ROOT_PATH . '/app/controllers/topics.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/admin_styles.css">   
+    <link rel="stylesheet" href="../../assets/css/public.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../../assets/css/admin_styles.css?v=<?php echo time(); ?>">   
+    
     <title>Admin - Create Topic</title>
 </head>
 
@@ -18,21 +21,23 @@
         <!-- Main Content -->
         <div class="page-content">
             <div class="admin-container">
-                <form class="sm-box admin-form" action="" method="post">
+                <form class="sm-box admin-form" action="create.php" method="post">
                     <h1 class="center">Create Topic</h1>
+                    <!-- Error Message -->
+                    <?php include(ROOT_PATH . '/app/helpers/formErrors.php'); ?>
                     <!-- Topic Name -->
                     <div class="input-group">
-                        <label for="title">Name</label>
-                        <input type="text" name="title" id="title" class="input-control" placeholder="Topic Name...">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" class="input-control" placeholder="Topic Name..." value="<?php echo $name; ?>">
                     </div>
                     <!-- Description -->
                     <div class="input-group">
                         <label for="description">Description</label>
-                        <textarea name="description" class="input-control" rows="7" placeholder="Description of topic..."></textarea>
+                        <textarea name="description" class="input-control" rows="7" placeholder="Description of topic..."><?php echo $description; ?></textarea>
                     </div>
                     <!-- Create -->
                     <div class="input-group">
-                        <button type="submit" class="add-post-btn btn-box-shadow btn"><b>Create</b></button>
+                        <button type="submit" class="add-post-btn btn-box-shadow btn" name="create-topic-btn"><b>Create</b></button>
                     </div>
                 </form>             
             </div>

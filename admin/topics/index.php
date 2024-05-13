@@ -1,12 +1,14 @@
 <?php include('../../path.php');?>
 <?php include(ROOT_PATH . '/app/database/db.php');?>
+<?php include(ROOT_PATH . '/app/controllers/topics.php');?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/admin_styles.css">
+    <link rel="stylesheet" href="../../assets/css/admin_styles.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../../assets/css/public.css?v=<?php echo time(); ?>">
     <title>Admin - Topics</title>
 </head>
 
@@ -32,6 +34,9 @@
                             </a>  
                         </div>
 
+                        <!-- Flash Message -->
+                        <?php include(ROOT_PATH . '/app/includes/messages.php'); ?>
+
                         <!-- TABLE -->
                         <div class="responsive-table">
                             <table>
@@ -52,19 +57,7 @@
                                             </div>
                                         </td>
                                         <td>3</td>
-                                    </tr>    
-                                    <tr>
-                                        <td>2</td>
-                                        <td>
-                                            Cybersecurity
-                                            <div class="td-action-links">
-                                                <a href="" class="trash">Delete</a>
-                                                <span class="inline-divider">|</span>
-                                                <a href="" class="edit">Edit</a>
-                                            </div>
-                                        </td>
-                                        <td>5</td>
-                                    </tr>                               
+                                    </tr>                                                          
                                 </tbody>
                             </table>
                         </div>
