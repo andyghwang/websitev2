@@ -16,7 +16,7 @@
     
             <div class="create-user-page login-page ">                
                     <form class="admin-form sm-box create-user-form" action="login.php" method="post">
-                        <a href="/index.html" class="logo-wrapper td-none center"> 
+                        <a href="/blog/index.php" class="logo-wrapper td-none center"> 
                             <div class="logo">A<span>G</span>H</div>
                         </a>
                         <h1 class="center">Login</h1> 
@@ -46,7 +46,7 @@
                             <label for="remember">Remember Me</label>    
                         </div>
 
-                        <!-- Login -->
+                        <!-- Login Button -->
                         <div class="input-group center">
                             <button type="submit" class="add-post-btn btn-box-shadow btn" name='login-btn'>Login</button>
                         </div>

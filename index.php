@@ -429,26 +429,21 @@ include(ROOT_PATH . '/app/controllers/topics.php');
             </div>
         </section>
 
-        <!-- Topic Section -->
-
-        <section class="page-section topics-container center">
-            
+        <!-- Topics Section -->
+        <section class="page-section topics-container center">         
             <h1>Explore articles in various topics</h1>
-            
+         
             <div class="topics-pills">
                 <?php foreach ($topics as $key => $topic): ?>
                     <a href=""><?php echo $topic['name']; ?></a>                                                                                                                              
-                <?php endforeach; ?>
-                
+                <?php endforeach; ?>               
             </div>     
         </section>
-
-
     </div>
     <!-- //Page Container -->
 
 
-
+    
     <!-- Footer -->
     <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
 

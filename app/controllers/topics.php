@@ -1,7 +1,5 @@
 <?php 
 
-include(ROOT_PATH . '/app/helpers/validateUser.php');
-
 $errors = array();
 $id = "";
 $name = "";

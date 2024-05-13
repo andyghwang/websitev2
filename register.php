@@ -17,7 +17,7 @@
     <div class="create-user-page ">                
         <form class="admin-form sm-box create-user-form" action="register.php" method="post">
             <!-- Logo -->
-            <a href="/index.html" class="logo-wrapper td-none center"> 
+            <a href="/blog/index.php" class="logo-wrapper td-none center"> 
                 <div class="logo">A<span>G</span>H</div>
             </a>
             <h1 class="center">Sign Up</h1>
