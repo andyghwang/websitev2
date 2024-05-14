@@ -68,7 +68,7 @@
                                             <td>
                                                 <?php echo $user['email']; ?>
                                                 <div class="td-action-links">
-                                                    <a href="" class="trash">Delete</a>
+                                                    <a href="delete_confirmation.php?del_user_id=<?php echo $user['id']; ?>" class="trash">Delete</a>
                                                     <span class="inline-divider">|</span>
                                                     <a href="" class="edit">Edit</a>
                                                 </div>
@@ -95,7 +95,6 @@
                                 </tfoot>
                             </table>
                         </div>
-
                     
                 </div>
             </div>
@@ -106,19 +105,6 @@
 
     <!-- Javascript -->  
     <script src="../../assets/js/admin.js"></script>
-    
-    <!-- Featured Post Change Btn -->
-    <script>
-        const changeBtn = document.querySelector(".change-btn");
-        const inputWrapper = document.querySelector(".input-wrapper");
-        const titleWrapper = document.querySelector(".title-wrapper");
-
-        changeBtn.addEventListener("click", function() {
-            changeBtn.classList.add("hide");
-            inputWrapper.classList.toggle("hide");
-            titleWrapper.classList.toggle("hide");
-        });
-    </script>
 
 </body>
 </html>

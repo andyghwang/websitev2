@@ -140,7 +140,6 @@ if (isset($_POST['create-user-btn'])) {
     }
 }
 
-
 // Login User
 if (isset($_POST['login-btn'])) {
    
@@ -167,4 +166,20 @@ if (isset($_POST['login-btn'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
     }
+}
+
+// Delete User
+if (isset($_GET['del_user_id'])) {
+
+    $user = selectOne($table, ['id' => $_GET['del_user_id']]);
+    $_SESSION['username'] = $user['username'];   
+}
+if (isset($_GET['del_user_confirm'])) {
+        
+    delete($table, $_GET['del_user_confirm']);
+    // Redirect
+    $username =  $_SESSION['username'];
+    $_SESSION['message'] = "$username successfully deleted ";
+    $_SESSION['type'] = 'success';
+    header('location: ' . BASE_URL . '/admin/users/index.php');
 }
