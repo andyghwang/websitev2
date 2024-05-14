@@ -1,12 +1,15 @@
 <?php include('../../path.php');?>
 <?php include(ROOT_PATH . '/app/database/db.php');?>
+<?php include(ROOT_PATH . '/app/controllers/users.php');?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/admin_styles.css">
+    <link rel="stylesheet" href="../../assets/css/admin_styles.css?v=<?php echo time(); ?>">   
+    <link rel="stylesheet" href="../../assets/css/public.css?v=<?php echo time(); ?>"> 
     <title>Admin - Users</title>
 </head>
 
@@ -43,6 +46,9 @@
                                 </button>
                             </a>                     
                         </div>
+                        
+                        <!-- Flash Message -->
+                        <?php include(ROOT_PATH . '/app/includes/messages.php'); ?>
 
                         <!-- TABLE -->
                         <div class="responsive-table">
@@ -54,32 +60,30 @@
                                     <th>Role</th>
                                 </thead> 
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>ahwang93</td>
-                                        <td>
-                                            andy.g.hwang@gmail.com
-                                            <div class="td-action-links">
-                                                <a href="" class="trash">Delete</a>
-                                                <span class="inline-divider">|</span>
-                                                <a href="" class="edit">Edit</a>
-                                            </div>
-                                        </td>
-                                        <td>Admin</td>
-                                    </tr>     
-                                    <tr>
-                                        <td>2</td>
-                                        <td>sujungee</td>
-                                        <td>
-                                            sujungee91@gmail.com
-                                            <div class="td-action-links">
-                                                <a href="" class="trash">Delete</a>
-                                                <span class="inline-divider">|</span>
-                                                <a href="" class="edit">Edit</a>
-                                            </div>
-                                        </td>
-                                        <td>Author</td>
-                                    </tr>                             
+                                    <?php $i = 0;?>
+                                    <?php foreach ($users as $user): ?>
+                                        <tr>
+                                            <td><?php echo $i + 1; ?></td>
+                                            <td><?php echo $user['username']; ?></td>
+                                            <td>
+                                                <?php echo $user['email']; ?>
+                                                <div class="td-action-links">
+                                                    <a href="" class="trash">Delete</a>
+                                                    <span class="inline-divider">|</span>
+                                                    <a href="" class="edit">Edit</a>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <?php 
+                                                    if ($user['admin'] == 1): 
+                                                        echo "Admin";
+                                                    else: 
+                                                        echo "User"; ?>
+                                                <?php endif; ?> 
+                                            </td>                                               
+                                        </tr>           
+                                        <?php $i++;?>                                                            
+                                    <?php endforeach;?>
                                 </tbody>
                                 <tfoot>
                                     <td colspan="6">

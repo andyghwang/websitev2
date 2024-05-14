@@ -5,7 +5,13 @@ $username = '';
 $email = '';
 $password = '';
 $passwordConf = '';
+$admin = 0;
+$bio = '';
+$facebook = '';
+$linkedin = '';
+$instagram = '';
 $table = 'users';
+$users = selectAll('users');
 
 // Validate User
 function validateRegister($user) 
@@ -39,7 +45,7 @@ function validateRegister($user)
     // Password validation
     if (empty($user['password'])) {
         array_push($errors, 'Password is required.');
-    } elseif ($user['password'] < )
+    } 
 
     if ($user['password'] !== $user['password-confirmation']) {
         array_push($errors, 'Passwords do not match.');
@@ -104,6 +110,36 @@ if (isset($_POST['register-btn'])) {
         $passwordConf = $_POST['password-confirmation'];
     }
 }
+
+// Create User
+if (isset($_POST['create-user-btn'])) {
+   
+    $errors = validateRegister($_POST);
+
+    if (empty($errors)) {
+         unset($_POST['password-confirmation'], $_POST['create-user-btn']);
+        // Password Hash for Security
+        $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $user_id = create($table, $_POST);
+        $user = selectOne($table, ['id' => $user_id]);
+        // Redirect
+        $_SESSION['message'] = "You successfully created a user.";
+        $_SESSION['type'] = 'success';
+        header('location: ' . BASE_URL . '/admin/users/index.php');
+
+    } else {
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $passwordConf = $_POST['password-confirmation'];
+        $admin = $_POST['admin'];
+        $bio = $_POST['bio'];
+        $facebook = $_POST['facebook'];
+        $linkedin = $_POST['linkedin'];
+        $instagram = $_POST['instagram'];
+    }
+}
+
 
 // Login User
 if (isset($_POST['login-btn'])) {
