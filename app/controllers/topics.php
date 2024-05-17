@@ -48,7 +48,7 @@ if (isset($_POST['create-topic-btn'])) {
     }
 }   
 
-// Edit Topic
+// Update Topic
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $topic = selectOne($table, ['id' => $id]);

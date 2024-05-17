@@ -68,12 +68,6 @@
                             </select>
                         </div>     
                         <div class="thrash-add">
-                            <a href="trash.php" class="td-none">
-                                <button type="button" class="btn trash-btn btn-box-shadow">
-                                    <ion-icon name="trash-outline" class="trash-icon"></ion-icon>
-                                    Trash
-                                </button>
-                            </a>
                             <a href="create.php"> 
                                 <button type="button" class="btn add-post-btn btn-box-shadow">
                                     <ion-icon name="add-circle-outline" class="add-post-icon"></ion-icon>
@@ -106,7 +100,7 @@
                                             <div class="td-action-links">
                                                 <a href="del_post_confirmation.php?del_id=<?php echo $post['id']; ?>" class="trash">Delete</a>
                                                 <span class="inline-divider">|</span>
-                                                <a href="" class="edit">Edit</a>
+                                                <a href="edit.php?edit_id=<?php echo $post['id']; ?>" class="edit">Edit</a>
                                                 <span class="inline-divider">|</span>
                                                 <a href="related_posts.html" class="edit">Related Post</a>
                                             </div>
