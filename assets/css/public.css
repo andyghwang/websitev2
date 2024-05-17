@@ -37,9 +37,9 @@
 
 /* Flash Message */
 .success {
-    color: rgb(0, 116, 29);
-    background-color: rgba(131, 207, 115, 0.363);
-    border: rgb(0, 173, 0) solid 1px;
+    background-color: #eaf8f5;
+    border: 1px solid #00bc98;
+    color: #00bc98;
     height: 2rem;
     font-size: 1.1rem;
     margin-top: 20px;

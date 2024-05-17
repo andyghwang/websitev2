@@ -95,7 +95,8 @@
             <br>
             <br>
             <br>
-            <a href="index.php" class="go-back">Go Back</a><a href="delete_confirmation.php?del_user_confirm=<?php echo $user['id']; ?>" class="delete">Delete User</a>
+            <a href="index.php" class="go-back">Go Back</a>
+            <a href="del_user_confirmation.php?del_user_confirm=<?php echo $user['id']; ?>" class="delete">Delete User</a>
         </div>   
     </div>
 

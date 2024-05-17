@@ -29,7 +29,7 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <d class="sidebar-author-mobile">
-            <img class="avatar" src="../assets/images/avatar/andy_profile_pic.png" alt="">
+            <img class="avatar" src="<?php echo BASE_URL . "/assets/images/avatar/andy_profile_pic.png" ?>" alt="">
             <h3 class="author-name">Andy Hwang</h3>
             <a href="<?php echo BASE_URL . '/logout.php' ?>" class="logout-link">Logout</a>
         </d>

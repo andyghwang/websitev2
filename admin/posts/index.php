@@ -1,12 +1,15 @@
 <?php include('../../path.php');?>
 <?php include(ROOT_PATH . '/app/database/db.php');?>
+<?php include(ROOT_PATH . '/app/controllers/posts.php');?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/admin_styles.css">
+    <link rel="stylesheet" href="../../assets/css/admin_styles.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../../assets/css/public.css?v=<?php echo time(); ?>"> 
+
     <title>Admin - Posts</title>
 </head>
 
@@ -23,11 +26,8 @@
                     <hr>
 
                     <!-- Flash Message -->
-                    <div class="message success">
-                        <ion-icon class="message-icon" name="checkmark-circle-outline"></ion-icon>
-                        <span>This is a sample message</span>
-                    </div>
-                    
+                    <?php include(ROOT_PATH . '/app/includes/messages.php'); ?>
+
                     <!-- Featured Post -->
                     <form action="post" class="featured-post-form">
                         <strong>Currently Featured Post:</strong>
@@ -96,40 +96,36 @@
                                 <th>Publish</th>
                             </thead> 
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Andy Hwang</td>
-                                    <td>
-                                        <a href="#">My First Blog Post</a>
-                                        <div class="td-action-links">
-                                            <a href="" class="trash">Delete</a>
-                                            <span class="inline-divider">|</span>
-                                            <a href="" class="edit">Edit</a>
-                                            <span class="inline-divider">|</span>
-                                            <a href="related_posts.html" class="edit">Related Post</a>
-                                        </div>
-                                    </td>
-                                    <td>Tech</td>
-                                    <td>100</td>
-                                    <td><a href="#">Publish</a></td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Alice Kim</td>
-                                    <td>
-                                        <a href="">Mocha and Dobby</a>
-                                        <div class="td-action-links">
-                                            <a href="" class="trash">Delete</a>
-                                            <span class="inline-divider">|</span>
-                                            <a href="" class="edit">Edit</a>
-                                            <span class="inline-divider">|</span>
-                                            <a href="related_posts.html" class="edit">Related Post</a>
-                                        </div>                                
-                                    </td>
-                                    <td>Animals</td>
-                                    <td>250</td>
-                                    <td><a href="">Unpublish</a></td>
-                                </tr>                                   
+                                <?php $i = 1; ?>
+                                <?php foreach($posts as $post): ?>
+                                    <tr>
+                                        <td><?php echo $i; ?></td>
+                                        <td>Andy Hwang</td>
+                                        <td>
+                                            <a href="#"><?php echo $post['title']; ?></a>
+                                            <div class="td-action-links">
+                                                <a href="del_post_confirmation.php?del_id=<?php echo $post['id']; ?>" class="trash">Delete</a>
+                                                <span class="inline-divider">|</span>
+                                                <a href="" class="edit">Edit</a>
+                                                <span class="inline-divider">|</span>
+                                                <a href="related_posts.html" class="edit">Related Post</a>
+                                            </div>
+                                        </td>
+                                        <td>Tech</td>
+                                        <td>100</td>
+                                        <td>
+                                            <a href="#">
+                                                <?php if($post['published'] == 1): ?> 
+                                                    <?php echo "Unpublish"?>  
+                                                <?php else: ?>
+                                                    <?php echo "Publish"?>     
+                                                <?php endif; ?>                                                                                               
+                                            </a>
+                                        </td>
+                                        <?php $i++; ?>
+                                    </tr>  
+                                <?php endforeach;?>
+                                 
                             </tbody>
                             <tfoot>
                                 <td colspan="6">

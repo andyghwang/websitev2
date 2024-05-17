@@ -68,9 +68,9 @@
                                             <td>
                                                 <?php echo $user['email']; ?>
                                                 <div class="td-action-links">
-                                                    <a href="delete_confirmation.php?del_user_id=<?php echo $user['id']; ?>" class="trash">Delete</a>
+                                                    <a href="del_user_confirmation.php?del_user_id=<?php echo $user['id']; ?>" class="trash">Delete</a>
                                                     <span class="inline-divider">|</span>
-                                                    <a href="" class="edit">Edit</a>
+                                                    <a href="edit.php?update_user_id=<?php echo $user['id']; ?>" class="edit">Edit</a>
                                                 </div>
                                             </td>
                                             <td>

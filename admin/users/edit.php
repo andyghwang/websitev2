@@ -23,8 +23,8 @@
             <div class="page-content">
                 <div class="admin-container">
                    
-                    <form class="admin-form sm-box" action="create.php" method="post" enctype="multipart/form-data">
-                        <h1 class="center">Create User</h1> 
+                    <form class="admin-form sm-box" action="edit.php" method="post" enctype="multipart/form-data">
+                        <h1 class="center">Edit User</h1> 
                         <!-- Profile Image -->
                         <div class="input-group center">
                             <button type="button" class="btn profile-avatar">
@@ -35,26 +35,21 @@
                         <!-- Error Message -->
                         <?php include(ROOT_PATH . '/app/helpers/formErrors.php'); ?>
                         <!-- Username -->
+                        <!-- ID -->
+                        <input type="hidden" name="id" value="<?php echo $update_user_id; ?>">
                         <div class="input-group">
                             <label for="username">Username</label>
                             <input type="text" id="username" name="username" class="input-control" value="<?php echo $username; ?>">
                         </div>
-
                         <!-- Email -->
                         <div class="input-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email" class="input-control" value="<?php echo $email; ?>">
                         </div>
                         <!-- Password -->
-                        <div class="input-group">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" name="password" class="input-control" value="<?php echo $password; ?>">
-                        </div>
+                        <input type="hidden" id="password" name="password" class="input-control" value="1">
                         <!-- Password Confirmation -->
-                        <div class="input-group">
-                            <label for="password-confirmation">Password Confirmation</label>
-                            <input type="password" id="password-confirmation" name="password-confirmation" class="input-control" value="<?php echo $passwordConf; ?>">
-                        </div>
+                        <input type="hidden" id="password-confirmation" name="password-confirmation" class="input-control" value="1">           
                         <!-- Role -->
                         <div class="input-group">
                             <label for="admin">Role</label>
@@ -83,7 +78,7 @@
                         </div>                                                                    
                         <!-- Submit -->
                         <div class="input-group">
-                            <button type="submit" class="add-post-btn btn-box-shadow btn" name="create-user-btn"><b>Create</b></button>
+                            <button type="submit" class="add-post-btn btn-box-shadow btn" name="update-user-btn"><b>Update</b></button>
                         </div>
                     </form>             
                 </div>

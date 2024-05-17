@@ -14,7 +14,7 @@ $table = 'users';
 $users = selectAll('users');
 
 // Validate User
-function validateRegister($user) 
+function validateUser($user) 
 {
     $errors = array();
     
@@ -24,8 +24,8 @@ function validateRegister($user)
     if (empty($user['username'])) {
         array_push($errors, 'Username is required.');
     // Check if user exists
-    } elseif (isset($existingUser)) {
-        array_push($errors, 'Username is already in use. Please use another username'); 
+    } elseif (($existingUser)) {
+        array_push($errors, 'Username is already in use.'); 
     // Length validation
     } elseif (strlen($user['username']) < 5 || strlen($user['username']) > 18) {
         array_push($errors, 'Username must be between 5 and 18 characters.');
@@ -38,8 +38,8 @@ function validateRegister($user)
    
     // Check if email exists
     $existingEmail = selectOne('users', ['email' => $user['email']]);
-    if (isset($existingEmail)) {
-        array_push($errors, 'Email is already in use. Please use another email');
+    if (($existingEmail)) {
+        array_push($errors, 'Email is already in use.');
     }
 
     // Password validation
@@ -70,7 +70,7 @@ function validateLogin($user)
     return $errors;
 }
 
-// Create New Session
+// New Session
 function loginUser($user) {
     
     $_SESSION['id'] = $user['id'];
@@ -91,7 +91,7 @@ function loginUser($user) {
 // Register User
 if (isset($_POST['register-btn'])) {
 
-    $errors = validateRegister($_POST);
+    $errors = validateUser($_POST);
 
     if (empty($errors)) {
         unset($_POST['password-confirmation'], $_POST['register-btn']);
@@ -114,7 +114,7 @@ if (isset($_POST['register-btn'])) {
 // Create User
 if (isset($_POST['create-user-btn'])) {
    
-    $errors = validateRegister($_POST);
+    $errors = validateUser($_POST);
 
     if (empty($errors)) {
          unset($_POST['password-confirmation'], $_POST['create-user-btn']);
@@ -182,4 +182,44 @@ if (isset($_GET['del_user_confirm'])) {
     $_SESSION['message'] = "$username successfully deleted ";
     $_SESSION['type'] = 'success';
     header('location: ' . BASE_URL . '/admin/users/index.php');
+}
+
+// Update User
+
+if (isset($_GET['update_user_id'])) {
+
+    $user = selectOne($table, ['id' => $_GET['update_user_id']]);
+    $update_user_id = $user['id'];
+    $username = $user['username'];
+    $email = $user['email'];
+    $admin = $user['admin'];
+    $bio = $user['bio'];
+    $facebook = $user['facebook'];
+    $linkedin = $user['linkedin'];
+    $instagram = $user['instagram'];
+}
+
+if (isset($_POST['update-user-btn'])) {
+    
+    $errors = validateUser($_POST);
+
+    if (empty($errors)) {
+
+        unset($_POST['update-user-btn']);
+        update($table, $_POST['id'], $_POST);
+
+        // Redirect
+        $_SESSION['message'] = "User updated.";
+        $_SESSION['type'] = 'success';
+        header('location: ' . BASE_URL . '/admin/users/index.php');
+
+    } else {
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $admin = $_POST['admin'];
+        $bio = $_POST['bio'];
+        $facebook = $_POST['facebook'];
+        $linkedin = $_POST['linkedin'];
+        $instagram = $_POST['instagram'];
+    }
 }

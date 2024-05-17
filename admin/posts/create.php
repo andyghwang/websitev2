@@ -1,14 +1,14 @@
 <?php include('../../path.php');?>
 <?php include(ROOT_PATH . '/app/database/db.php');?>
+<?php include(ROOT_PATH . '/app/controllers/posts.php');?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Quill.js -->
-    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.0/dist/quill.snow.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="../../assets/css/admin_styles.css">   
+    <link rel="stylesheet" href="../../assets/css/admin_styles.css?v=<?php echo time(); ?>"> 
     <title>Admin - Create Post</title>
 </head>
 
@@ -21,37 +21,30 @@
         <!-- Main Content -->
         <div class="page-content">
             <div class="admin-container">
-                <form class="admin-form md-box" action="" method="post" enctype="multipart/form-data">
+                <form class="admin-form md-box" action="create.php" method="post" enctype="multipart/form-data">
                     <h1 class="center">Create Post</h1>
-                    <!-- Error Message -->
-                    <ul class="form-errors">
-                        <li>Post Title Required</li>
-                        <li>Email Required</li>
-                    </ul>
+
                     <!-- Title -->
                     <div class="input-group">
                         <label for="title">Title</label>
                         <input type="text" name="title" id="title" class="input-control" placeholder="Blog title...">
                     </div>
                     <!-- Body -->
-                    <div class="input-group">
-                        <label for="editor">Body</label>
-                        <div id="editor" class="editor"></div>
-                    </div>
+                    <textarea name="body" id="editor"></textarea>    
                     <!-- Topic -->
                     <div class="post-details input-group">
                         <div class="select-topic-wrapper">
                             <label for="topic">Topic</label>
                             <select name="topic-id" id="topic" class="input-control">
                                 <option value="">** Choose Topic **</option>
-                                <option value="Web Development">Web Development</option>
-                                <option value="Networking">Networking</option>
-                                <option value="Cybersecurity">Cybersecurity</option>
+                                <?php foreach ($topics as $topic): ?>
+                                    <option value="<?php echo $topic['id']; ?>"><?php echo $topic['name']; ?></option>                                  
+                                <?php endforeach; ?>
                             </select>
                         </div>
                         <!-- Upload Image Btn -->
                         <div class="image-wrapper">
-                            <input type="file" name="image" id="" class="hide image-input">
+                            <input type="file" name="image" class="hide image-input">
                             <button type="button" class="bg-img btn img-btn btn-box-shadow">
                                 <span>
                                     <ion-icon class="img-btn-icon" name="image-outline"></ion-icon>
@@ -77,7 +70,7 @@
                     </div>
                     <!-- Submit -->
                     <div class="input-group">
-                        <button type="submit" class="add-post-btn btn-box-shadow btn"><b>Create</b></button>
+                        <button type="submit" class="add-post-btn btn-box-shadow btn" name="create-post-btn"><b>Create</b></button>
                     </div>
                 </form>             
             </div>
@@ -118,9 +111,15 @@
         });
     </script>
 
-    <!-- Quill Library -->
-    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.0/dist/quill.js"></script>
-    <script src="../../assets/js/quill.js"></script>
+    <!-- CKEditor -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.4.1/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
     
 </body>
 </html>

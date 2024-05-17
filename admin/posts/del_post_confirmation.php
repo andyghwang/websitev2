@@ -1,5 +1,6 @@
 <?php include('../../path.php');?>
 <?php include(ROOT_PATH . '/app/database/db.php');?>
+<?php include(ROOT_PATH . '/app/controllers/posts.php');?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,17 +22,22 @@
                     <div class="admin-table">
                         <h1>Are you sure?</h1>
                         <hr>
-                        <p>Are you sure you want to delete the post titled <strong>"Name and title of post"</strong> permanently?</p>
+                        <p>Are you sure you want to delete the post titled <strong><?php echo $post['title']; ?></strong> permanently?</p>
                         <strong><p style="color: rgb(230, 20, 20);">This action <u>cannot</u> be undone.</p></strong>
-                            <button type="button" class="btn add-post-btn btn-box-shadow" 
-                            style="
-                            background-color: rgb(221, 0, 0);
-                            border: solid 1px rgba(255, 255, 255, 0.541);">
+                        <a href="del_post_confirmation.php?del_post_id=<?php echo $post['id']; ?>">
+                            <button 
+                                type="button"
+                                class="btn add-post-btn btn-box-shadow" 
+                                style=
+                                    "
+                                    background-color: rgb(221, 0, 0);
+                                    border: solid 1px rgba(255, 255, 255, 0.541);
+                                    ">
                                 <ion-icon name="trash-outline"></ion-icon>
                                 Permanently Delete
-                            </button>                           
-                        </a>
-                        <a href="trash.html"> 
+                            </button> 
+                        </a>                                                                 
+                        <a href="index.php"> 
                             <button type="button" class="btn add-post-btn btn-box-shadow">
                                 Go Back
                             </button>                           
