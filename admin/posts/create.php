@@ -9,6 +9,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/admin_styles.css?v=<?php echo time(); ?>"> 
+    <link rel="stylesheet" href="../../assets/css/public.css?v=<?php echo time(); ?>">
+
     <title>Admin - Create Post</title>
 </head>
 
@@ -24,13 +26,15 @@
                 <form class="admin-form md-box" action="create.php" method="post" enctype="multipart/form-data">
                     <h1 class="center">Create Post</h1>
 
+                    <!-- Error Message -->
+                    <?php include(ROOT_PATH . '/app/helpers/formErrors.php'); ?>
                     <!-- Title -->
                     <div class="input-group">
                         <label for="title">Title</label>
-                        <input type="text" name="title" id="title" class="input-control" placeholder="Blog title...">
+                        <input type="text" name="title" id="title" class="input-control" placeholder="Blog title..." value="<?php echo $title; ?>">
                     </div>
                     <!-- Body -->
-                    <textarea name="body" id="editor"></textarea>    
+                    <textarea name="body" id="editor"><?php echo $body; ?></textarea>    
                     <!-- Topic -->
                     <div class="post-details input-group">
                         <div class="select-topic-wrapper">
