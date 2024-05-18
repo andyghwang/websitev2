@@ -17,17 +17,27 @@ $users = selectAll('users');
 function validateUser($user) 
 {
     $errors = array();
+    global $table;
     
     // Username validation
-    $existingUser = selectOne('users', ['username' => $user['username']]);
+
     // Check if field is empty
     if (empty($user['username'])) {
         array_push($errors, 'Username is required.');
+    }
     // Check if user exists
-    } elseif (($existingUser)) {
-        array_push($errors, 'Username is already in use.'); 
-    // Length validation
-    } elseif (strlen($user['username']) < 5 || strlen($user['username']) > 18) {
+    $existingUser = selectOne($table, ['username' => $user['username']]);
+    if ($existingUser){    
+        if (isset($user['update-user-btn']) && $user['id'] != $existingUser['id']) {
+            array_push($errors, 'This user already exists.');
+        }
+        if (isset($user['create-user-btn'])) {
+            array_push($errors, 'This user already exists.');
+        }        
+    } 
+    
+     // Length validation
+    if (strlen($user['username']) < 5 || strlen($user['username']) > 18) {
         array_push($errors, 'Username must be between 5 and 18 characters.');
     }
 
@@ -35,13 +45,17 @@ function validateUser($user)
     if (empty($user['email'])) {
         array_push($errors, 'Email is required.');
     }
-   
-    // Check if email exists
-    $existingEmail = selectOne('users', ['email' => $user['email']]);
-    if (($existingEmail)) {
-        array_push($errors, 'Email is already in use.');
-    }
+    $existingEmail = selectOne($table, ['email' => $user['email']]);
+    if ($existingEmail){    
+        if (isset($user['update-user-btn']) && $user['id'] != $existingEmail['id']) {
+            array_push($errors, 'This email already exists.');
+        }
+        if (isset($user['create-user-btn'])) {
+            array_push($errors, 'This email already exists.');
+        }        
+    } 
 
+   
     // Password validation
     if (empty($user['password'])) {
         array_push($errors, 'Password is required.');
@@ -179,13 +193,14 @@ if (isset($_GET['del_user_confirm'])) {
     delete($table, $_GET['del_user_confirm']);
     // Redirect
     $username =  $_SESSION['username'];
-    $_SESSION['message'] = "$username successfully deleted ";
+    $_SESSION['message'] = "User $username successfully deleted ";
     $_SESSION['type'] = 'success';
     header('location: ' . BASE_URL . '/admin/users/index.php');
 }
 
 // Update User
 
+$update_user_id = 0;
 if (isset($_GET['update_user_id'])) {
 
     $user = selectOne($table, ['id' => $_GET['update_user_id']]);
@@ -197,16 +212,21 @@ if (isset($_GET['update_user_id'])) {
     $facebook = $user['facebook'];
     $linkedin = $user['linkedin'];
     $instagram = $user['instagram'];
+    
 }
 
 if (isset($_POST['update-user-btn'])) {
     
+    $update_user_id = $_POST['id'];
     $errors = validateUser($_POST);
 
     if (empty($errors)) {
-
+        $id = $_POST['id'];
         unset($_POST['update-user-btn']);
-        update($table, $_POST['id'], $_POST);
+        unset($_POST['password-confirmation']);
+        unset($_POST['id']);
+        
+        update($table, $id, $_POST);
 
         // Redirect
         $_SESSION['message'] = "User updated.";
