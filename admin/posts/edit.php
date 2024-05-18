@@ -41,10 +41,12 @@
                     <div class="post-details input-group">
                         <div class="select-topic-wrapper">
                             <label for="topic">Topic</label>
-                            <select name="topic-id" id="topic" class="input-control">
-                                <option value="">** Choose Topic **</option>
-                                <?php foreach ($topics as $topic): ?>
-                                    <option value="<?php echo $topic['id']; ?>"><?php echo $topic['name']; ?></option>                                  
+                            <select name="topic_id" id="topic" class="input-control">
+                                <option value="<?php echo $topic['id']; ?>"><?php echo $topic['name']; ?></option>
+                                <?php foreach ($topics as $t): ?>
+                                    <?php if ($t['id'] != $topic['id']): ?>
+                                        <option value="<?php echo $t['id']; ?>"><?php echo $t['name']; ?></option>  
+                                    <?php endif; ?>                                
                                 <?php endforeach; ?>
                             </select>
                         </div>

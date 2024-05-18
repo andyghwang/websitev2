@@ -3,6 +3,7 @@
 $errors = array();
 $table = 'posts';
 $topics = selectAll('topics');
+$topic = "";
 $posts = selectAll($table);
 $post = array();
 $title = "";
@@ -19,7 +20,7 @@ function validatePost($post) {
    if (empty($post['body'])) {
       array_push($errors, 'Please enter post content.');
    } 
-   if ($post['topic-id'] == "") {
+   if ($post['topic_id'] == "") {
       array_push($errors, 'Please choose a post topic.');
    }
     return $errors;
@@ -34,12 +35,12 @@ if (isset($_POST['create-post-btn'])) {
       $_POST['user_id'] = 1;
       $_POST['image'] = $_FILES['image']['name'];
       unset($_POST['create-post-btn']);
-      unset($_POST['topic-id']);
       if(isset($_POST['published'])) {
          $_POST['published'] = 1;
       } else {
          $_POST['published'] = 0;
       }
+      
       create($table, $_POST);
 
       // Redirect
@@ -54,13 +55,14 @@ if (isset($_POST['create-post-btn'])) {
 
 // Update Post
 if (isset($_GET['edit_id'])) {
-   $post = selectOne($table, ['id' => $_GET['edit_id']]);
+   $post = selectOne($table, ['id' => $_GET['edit_id']]);   
+   $topic = selectOne('topics', ['id' => $post['topic_id']]);
 } 
 
 if (isset($_POST['update-post-btn'])) {
-
    $errors = array();
    $errors = validatePost($_POST);
+   $topic = selectOne('topics', ['id' => $_POST['topic_id']]);
 
    if (empty($errors)) {
       $id = $_POST['id'];
@@ -85,6 +87,7 @@ if (isset($_POST['update-post-btn'])) {
       $post['title'] = $_POST['title'];
       $post['body'] = $_POST['body'];
       $post['id'] = $_POST['id'];
+
    }
 }
 

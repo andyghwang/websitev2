@@ -39,7 +39,7 @@
                     <div class="post-details input-group">
                         <div class="select-topic-wrapper">
                             <label for="topic">Topic</label>
-                            <select name="topic-id" id="topic" class="input-control">
+                            <select name="topic_id" id="topic" class="input-control">
                                 <option value="">** Choose Topic **</option>
                                 <?php foreach ($topics as $topic): ?>
                                     <option value="<?php echo $topic['id']; ?>"><?php echo $topic['name']; ?></option>                                  
