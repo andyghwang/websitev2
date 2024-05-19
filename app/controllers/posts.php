@@ -104,4 +104,16 @@ if (isset($_GET['del_post_id'])) {
    header('location: index.php');
 };
 
+// Change Published
+if (isset($_GET['published_id'])) {
+   $post = selectOne($table, ['id' => $_GET['published_id']]);
+   $published = array();
+   if ($post['published'] == 0) {
+      $published = ['published' => 1];
+   } else {
+      $published = ['published' => 0];
+   }
+   update($table, $post['id'], $published);
+   header('location: index.php');
+}
 ?>

@@ -105,10 +105,11 @@
                                                 <a href="related_posts.html" class="edit">Related Post</a>
                                             </div>
                                         </td>
-                                        <td>Tech</td>
+                                        <?php $topic = selectOne('topics', ['id' => $post['topic_id']]); ?>
+                                        <td><?php echo $topic['name']; ?></td>
                                         <td>100</td>
                                         <td>
-                                            <a href="#">
+                                            <a href="index.php?published_id=<?php echo $post['id']?>">
                                                 <?php if($post['published'] == 1): ?> 
                                                     <?php echo "Unpublish"?>  
                                                 <?php else: ?>
