@@ -68,7 +68,10 @@
                     <!-- Published Checkbox -->
                     <div class="input-group">
                         <label for="published">
-                            <input type="checkbox" name="published" id="published">
+                            <input type="checkbox" name="published" id="published"
+                            <?php if($published == 1): ?>
+                                <?php echo "checked"?>
+                            <?php endif;?>>                       
                             Publish
                         </label>
                     </div>
