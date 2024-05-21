@@ -54,8 +54,13 @@
                         <div class="input-group">
                             <label for="admin">Role</label>
                             <select name="admin" id="admin" class="input-control">
-                                <option value="1">Admin</option>
-                                <option value="0">User</option>
+                                <?php if($admin == 1): ?>
+                                    <option value="1">Admin</option>
+                                    <option value="0">User</option>
+                                <?php else: ?>
+                                    <option value="0">User</option>
+                                    <option value="1">Admin</option>
+                                <?php endif; ?>                                            
                             </select>
                         </div>      
                         <!-- Bio -->

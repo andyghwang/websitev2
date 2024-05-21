@@ -27,16 +27,16 @@
                 <form class="admin-form md-box" action="edit.php" method="post" enctype="multipart/form-data">
                     <h1 class="center">Edit Post</h1>
                     <!-- Hidden ID -->                 
-                    <input type="hidden" name="id" value="<?php echo $post['id']; ?>">
+                    <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <!-- Error Message -->
                     <?php include(ROOT_PATH . '/app/helpers/formErrors.php'); ?>
                     <!-- Title -->
                     <div class="input-group">
                         <label for="title">Title</label>
-                        <input type="text" name="title" id="title" class="input-control" placeholder="Blog title..." value="<?php echo $post['title']; ?>">
+                        <input type="text" name="title" id="title" class="input-control" placeholder="Blog title..." value="<?php echo $title; ?>">
                     </div>
                     <!-- Body -->
-                    <textarea name="body" id="editor"><?php echo $post['body']; ?></textarea>    
+                    <textarea name="body" id="editor"><?php echo $body; ?></textarea>    
                     <!-- Topic -->
                     <div class="post-details input-group">
                         <div class="select-topic-wrapper">
@@ -73,7 +73,7 @@
                     <div class="input-group">
                         <label for="published">
                             <input type="checkbox" name="published" id="published"                           
-                            <?php if($post['published'] == 1): ?>
+                            <?php if($published == 1): ?>
                                 <?php echo "checked"?>
                             <?php endif;?>
                             />                            

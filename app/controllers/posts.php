@@ -37,7 +37,7 @@ if (isset($_POST['create-post-btn'])) {
    } 
 
    if (empty($errors)) {
-      $_POST['user_id'] = 1;
+      $_POST['user_id'] = $_SESSION['id'];
       
       unset($_POST['create-post-btn']);
       if(isset($_POST['published'])) {
@@ -75,20 +75,23 @@ if (isset($_POST['create-post-btn'])) {
 if (isset($_GET['edit_id'])) {
    $post = selectOne($table, ['id' => $_GET['edit_id']]);   
    $topic = selectOne('topics', ['id' => $post['topic_id']]);
+
+   $id = $post['id'];
+   $title = $post['title'];
+   $body = $post['body'];
+   $published = $post['published'];
 } 
 
 if (isset($_POST['update-post-btn'])) {
-   $errors = array();
    $errors = validatePost($_POST);
    $topic = selectOne('topics', ['id' => $_POST['topic_id']]);
 
    if (empty($errors)) {
       $id = $_POST['id'];
-      $_POST['user_id'] = 1;
+      $_POST['user_id'] = $_SESSION['id'];
       $_POST['image'] = $_FILES['image']['name'];
-      unset($_POST['update-post-btn']);
-      unset($_POST['topic-id']);
-      unset($_POST['id']);
+      unset($_POST['update-post-btn'], $_POST['topic-id'], $_POST['id']);
+
       if(isset($_POST['published'])) {
          $_POST['published'] = 1;
       } else {
@@ -102,10 +105,14 @@ if (isset($_POST['update-post-btn'])) {
       header('location: index.php');
 
    } else {
-      $post['title'] = $_POST['title'];
-      $post['body'] = $_POST['body'];
-      $post['id'] = $_POST['id'];
-
+      $id = $_POST['id'];
+      $title = $_POST['title'];
+      $body = $_POST['body'];
+      if(isset($_POST['published'])) {
+         $published = 1;
+      } else {
+         $published = 0;
+      }
    }
 }
 
@@ -138,6 +145,6 @@ if (isset($_GET['published_id'])) {
    $_SESSION['message'] = $published_message;
    $_SESSION['type'] = "success";
    header('location: index.php');
-   end();
+   exit();
 }
 ?>

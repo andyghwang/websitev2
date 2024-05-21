@@ -93,8 +93,12 @@
                                 <?php $i = 1; ?>
                                 <?php foreach($posts as $post): ?>
                                     <tr>
+                                        <!-- ID -->
                                         <td><?php echo $i; ?></td>
-                                        <td>Andy Hwang</td>
+                                        <!-- Author -->
+                                        <?php $user = selectOne('users', ['id' => $post['user_id']]); ?>
+                                        <td><?php echo $user['username']; ?></td>                                       
+                                        <!-- Title -->
                                         <td>
                                             <a href="#"><?php echo $post['title']; ?></a>
                                             <div class="td-action-links">
@@ -105,9 +109,12 @@
                                                 <a href="related_posts.html" class="edit">Related Post</a>
                                             </div>
                                         </td>
+                                        <!-- Topic -->
                                         <?php $topic = selectOne('topics', ['id' => $post['topic_id']]); ?>
                                         <td><?php echo $topic['name']; ?></td>
+                                        <!-- Views -->
                                         <td>100</td>
+                                        <!-- Published -->
                                         <td>
                                             <a href="index.php?published_id=<?php echo $post['id']?>">
                                                 <?php if($post['published'] == 1): ?> 

@@ -54,7 +54,6 @@ function validateUser($user)
             array_push($errors, 'This email already exists.');
         }        
     } 
-
    
     // Password validation
     if (empty($user['password'])) {
@@ -102,7 +101,7 @@ function loginUser($user) {
     exit();
 }
 
-// Register User
+// Register User **COMBINE WITH CREATE USER IN THE FUTURE**
 if (isset($_POST['register-btn'])) {
 
     $errors = validateUser($_POST);
@@ -125,7 +124,7 @@ if (isset($_POST['register-btn'])) {
     }
 }
 
-// Create User
+// Create User **COMBINE WITH CREATE USER IN THE FUTURE**
 if (isset($_POST['create-user-btn'])) {
    
     $errors = validateUser($_POST);
@@ -199,7 +198,6 @@ if (isset($_GET['del_user_confirm'])) {
 }
 
 // Update User
-
 $update_user_id = 0;
 if (isset($_GET['update_user_id'])) {
 
